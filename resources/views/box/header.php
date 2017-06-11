@@ -53,7 +53,10 @@
                 <li><a class="dropdown-button" href="#!" data-activates="drowndownmain">Share a Book
                         <i class="material-icons right">arrow_drop_down</i></a></li>
                 <li class="divider"></li>
+
+          
                 <li><a href="#loginreg"><i class="material-icons">account_circle</i>Login/Register</a></li>
+              
             </ul>
 
 

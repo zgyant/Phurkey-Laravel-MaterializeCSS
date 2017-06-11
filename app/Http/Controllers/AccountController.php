@@ -71,8 +71,7 @@ class AccountController extends Controller
     }
 
 
-    public
-    function logout(Request $request)
+    public function logout(Request $request)
     {
         Session::forget('user_email','flash_message');
         return Redirect::intended('/');

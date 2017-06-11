@@ -25,7 +25,7 @@
 
         <h5>My Dashboard</h5><hr/>
            <span class="right-align">
-               <p>Welcome <b>Jayant Mishra</b></p>
+               <p>Welcome,<a class="nav-link ml-auto" href="#"> Jayant Mishra </a></p>
                </span>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

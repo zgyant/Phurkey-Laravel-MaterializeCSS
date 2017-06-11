@@ -31,7 +31,10 @@
 
         <div class="row">
 
-            <form class="col s12">
+            <form class="col s12" method="post" action="add_book"> 
+
+               <input type="hidden" name="_token" value="<?= csrf_token();?>">
+
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="book_name" type="text" class="validate">
@@ -48,6 +51,7 @@
                         <input id="publisher_name" type="text" class="validate">
                         <label for="publisher_name">Publisher Name</label>
                     </div>
+
                 </div>
                 <div class="input-field col s12 left-align row">
                     <div class="chips chips-autocomplete" id="chipsgenre">
@@ -55,7 +59,7 @@
                     <label for="chipsgenre">Genre and Categories</label>
                 </div>
                 <div class="input-field col s12">
-                    <textarea id="bio" class="materialize-textarea" data-length="120"></textarea>
+                    <textarea id="bio" class="materialize-textarea" data-length="120" name="description"></textarea>
                     <label for="bio">Detail of the book & if exchange; condition for exchange</label>
                 </div>
                 <div class="row">
@@ -76,7 +80,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <select>
+                        <select id="condition">
                             <option value="" disabled selected>Choose the condition of the book</option>
                             <option value="1">Old</option>
                             <option value="2">New</option>
@@ -105,11 +109,10 @@
                     <p>Want to boost your product? Contact our ads team at <span
                             class="blue-text">ads@phurkey.com</span></p>
                 </blockquote>
-                <a class="waves-effect waves-teal btn-flat btn-large right">Upload
+                <button class="waves-effect waves-teal btn-flat btn-large right" type="submit">Upload
                     <i class="material-icons right">file_upload</i>
-                </a>
+                </button>
             </form>
-
         </div>
     </div>
 </div>

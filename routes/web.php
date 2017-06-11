@@ -78,5 +78,6 @@ Route::get('logout', 'AccountController@logout');
 //checkdata
 Route::post('checkdata', 'AccountController@checkdata');
 
-
+//add book
+Route::post('add_book', 'BookController@store');
 
