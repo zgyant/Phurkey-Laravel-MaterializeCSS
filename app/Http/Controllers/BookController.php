@@ -42,7 +42,7 @@ class BookController extends Controller
 
         $book->book_name = Input::get('book_name');
 
-        $book->authur_name = Input::get('authur_name');
+        $book->authur_name = Input::get('author_name');
 
         $book->publisher_name = Input::get('publisher_name');
 
@@ -50,10 +50,12 @@ class BookController extends Controller
 
         $book->description = Input::get('description');
 
-        $book->price = Input::get('book');
+        $book->price = Input::get('price_book');
         
-        $book->image = Input::get('image');
-        
+        $book->image = Input::get('book_image');
+
+        $book->exse= Input::get('sellobuy');
+
         $book->book_condition = Input::get('book_condition');
 
         try{
