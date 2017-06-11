@@ -54,7 +54,15 @@ class BookController extends Controller
         
         $book->image = Input::get('book_image');
 
-        $book->exse= Input::get('sellobuy');
+
+        if(empty(Input::get('sellobuy')))
+        {
+            $book->exse= 0;
+        }
+        else
+        {
+            $book->exse = Input::get('sellobuy');
+        }
 
         $book->book_condition = Input::get('book_condition');
 
@@ -63,7 +71,7 @@ class BookController extends Controller
             $book->save();
             Session::flash('flash_message', 'Book information added successfully :) '); 
 
-            return redirect('/');  
+            return redirect('/booklist');
 
         }catch(Exception $e)
         {
