@@ -61,7 +61,20 @@ Route::get('dashboard', function () {
     return view('dashboard');
 });
 
+//CMS ROUTES
+Route::get('yakana/spinal/admin/dashboard',function()
+{
+    return view('backend/backend');
+})->name('admindash');
 
+Route::get('yakana/spinal/admin/login',function()
+{
+    return view('backend/login');
+})->name('adminlogin');
+Route::get('yakana/spinal/admin',function()
+{
+    return view('backend/backend');
+});
 
 
 //Register Route
@@ -72,9 +85,15 @@ Route::post('create_user', 'AccountController@register');
 
 Route::post('login_user', 'AccountController@login');
 
+//Login Admin Route
+
+Route::post('yakana/spinal/admin/login_admin', 'AdminAccountController@login');
+Route::post('yakana/spinal/login_admin', 'AdminAccountController@login');
+
 //Logout
 Route::get('logout', 'AccountController@logout');
-
+Route::get('yakana/spinal/admin/logout','AdminAccountController@logout');
+Route::get('yakana/spinal/logout','AdminAccountController@logout');
 //checkdata
 Route::post('checkdata', 'AccountController@checkdata');
 
