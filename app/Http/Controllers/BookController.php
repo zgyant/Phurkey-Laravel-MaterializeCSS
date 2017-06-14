@@ -40,6 +40,8 @@ class BookController extends Controller
     */
         $book = new book;
 
+        $destinationPath = base_path(). '/public/images/book_uploads/';
+
         $book->book_name = Input::get('book_name');
 
         $book->authur_name = Input::get('author_name');
@@ -51,8 +53,14 @@ class BookController extends Controller
         $book->description = Input::get('description');
 
         $book->price = Input::get('price_book');
-        
-        $book->image = Input::get('book_image');
+
+        $bookname=Input::file('book_name');
+
+        $bookNameafter=$bookname->getClientOriginalName();
+
+        $bookname->move($destinationPath,$bookNameafter);
+
+        $book->image=$bookNameafter;
 
 
         if(empty(Input::get('sellobuy')))

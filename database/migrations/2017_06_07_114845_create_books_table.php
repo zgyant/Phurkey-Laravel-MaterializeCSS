@@ -19,9 +19,10 @@ class CreateBooksTable extends Migration
             $table->string('authur_name');
             $table->string('publisher_name');
             $table->string('genre');
+            $table->string('uploader_email');
             $table->text('description');
             $table->integer('price');
-            $table->binary('image');
+            $table->text('image');
             $table->text('book_condition');
             $table->boolean('exse');
 

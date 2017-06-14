@@ -4,7 +4,7 @@ if(Session::has('email'))
     $type=Session::get('admin_type');
     $flashmg=Session::get('flash_message');
     include resource_path("views/box/backend/header.php");
-    include resource_path("views/theme/backend/dashboard.php");
+    include resource_path("views/box/backend/sidemenu.php");
     include resource_path("views/box/backend/footer.php");
 }
 else

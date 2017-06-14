@@ -2,7 +2,7 @@
 if(Session::has('email'))
 {
     include resource_path("views/box/backend/header.php");
-    include resource_path("views/theme/backend/dashboard.php");
+    include resource_path("views/theme/backend/sidemenu.php");
     include resource_path("views/box/backend/footer.php");
 }
 else
