@@ -1,3 +1,7 @@
+<?php
+$useremail=Session::get('user_email');
+$userdetails=\App\phurkey_users::where('email',$useremail)->get();
+?>
 <div id="left-bigyapan">
     <!-- width 205 height 279-->
     <img src="images/ad1.jpg" width="100%" height="100%"/>
@@ -27,9 +31,13 @@
                  data-tooltip="Click to collapse">
                 <i class="material-icons">account_box</i><span
                     style="margin-bottom: 25px;border-bottom: 1px dotted #e1dfd8;color: #5a5a5a">Basic Info</span></div>
+           <?php
+           foreach($userdetails as $userdetail)
+           {
+           ?>
             <div class="collapsible-body">
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" action="update_profile" method="post">
                         <div id="profilepic" style="width: 140px;float: left;margin-right: 20%">
                             <div class="image-upload file-field ">
                                 <label for="file-input">
@@ -46,8 +54,8 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="full_name" type="text" class="validate">
-                                <label for="full_name">Full Name</label>
+                                <input id="full_name" type="text" class="validate" name ="fullname"required value="<?=$userdetail->full_name;?>">
+                                <label for="full_name"></label>
                             </div>
                             <div class="input-field col s6">
                                 <input id="disabled" disabled type="text" class="validate">
@@ -56,19 +64,19 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="email" disabled type="email" class="validate">
+                                <input id="email" disabled type="email" class="validate" value="<?=$userdetail->email;?>">
                                 <label for="email">email@phurkey.com</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="password" type="password" class="validate">
+                                <input id="password" type="password" class="validate" name="password" required>
                                 <label for="password">Password</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12" id="locationField">
-                                <input id="autocomplete" type="text" onFocus="geolocate()">
+                                <input id="autocomplete" type="text" onFocus="geolocate()" name="address" value="<?=$userdetail->address;?>" required>
                                 <label for="autocomplete="" ">Address</label>
                             </div>
                         </div>
@@ -76,21 +84,21 @@
                             <div class="input-field col s12">
                                 <p>
                                     <label for="dateob" class="">Date of Birth</label>
-                                    <input type="date" id="dateob" class="datepicker">
+                                    <input type="date" id="dateob" class="datepicker" name="dateob" required>
                                 </p>
 
                                 <p>
-                                    <input name="group1" type="radio" id="male"/>
+                                    <input name="group1" type="radio" id="male" disabled/>
                                     <label for="male">Male</label>
                                 </p>
 
                                 <p>
-                                    <input name="group1" type="radio" id="female"/>
+                                    <input name="group1" type="radio" id="female" disabled/>
                                     <label for="female">Female</label>
                                 </p>
 
                                 <p>
-                                    <input name="group1" type="radio" id="other"/>
+                                    <input name="group1" type="radio" id="other" disabled/>
                                     <label for="other">Other</label>
                                 </p>
                             </div>
@@ -99,7 +107,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="text" list="cars"/>
+                                <input type="text" list="cars" required/>
                                 <datalist id="cars">
                                     <option value="Student">Student</option>
                                     <option value="Teacher">Teacher</option>
@@ -108,34 +116,27 @@
                                 <label>I'm a</label>
                             </div>
                         </div>
-                        <a class="waves-effect waves-teal btn-flat btn-large">Save<i
-                                class="material-icons right">save</i></a>
+
+                        <div class="input-field col s12">
+                            <textarea  class="materialize-textarea" data-length="120" placeholder="Something about yourself">
+                                <?=$userdetail->descriptions;?>
+                            </textarea>
+                        </div>
+
+                        <button class="btn waves-effect btn-flat" type="submit" name="action" style="float: right">Update Profile
+                            <i class="material-icons right">send</i>
+                        </button>
                     </form>
                 </div>
             </div>
+            <?php
+           }
+            ?>
         </li>
 
         <!-- Preferences -->
 
-        <li>
-            <div class="collapsible-header">
-                <i class="material-icons">details</i><span style="margin-bottom: 25px;border-bottom: 1px dotted #e1dfd8;color: #5a5a5a">Preferences & Others</span>
-            </div>
-            <div class="collapsible-body">
-                <form action="#" method="get">
-                    <div class="input-field col s12 left-align row" style="height: 50px">
-                        <div class="chips chips-autocomplete" id="chipsgenre">
-                        </div>
-                        <label for="chipsgenre">Genre and Categories Preferences</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <textarea  class="materialize-textarea" data-length="120" placeholder="Something about yourself"></textarea>
-                    </div>
-                    <a class="waves-effect waves-teal btn-flat btn-large">Save<i
-                            class="material-icons right">save</i></a>
-                </form>
-            </div>
-        </li>
+
     </ul>
 </div>
 </main>

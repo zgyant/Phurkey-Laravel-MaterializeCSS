@@ -1,9 +1,8 @@
 <?php
 if(Session::has('email'))
 {
-    include resource_path("views/box/backend/header.php");
-    include resource_path("views/theme/backend/sidemenu.php");
-    include resource_path("views/box/backend/footer.php");
+    echo "<script>window.location.replace('/yakana/spinal/admin');
+</script>";
 }
 else
 {

@@ -9,16 +9,18 @@
             }?>
             <h5 class="left-align">Already have an account?</h5>
             <p>
-                <form method="post" action="#">
-                    <div class="row">
+                <form method="post" action="login_user">
+                <input type="hidden" name="_token" value="<?= csrf_token();?>">
+
+                <div class="row">
                         <div class="input-field col s12">
-                            <input id="username" type="text" class="validate" required>
+                            <input id="username" type="text" class="validate" required name="login_email">
                             <label for="username">Username/Email *</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="password" type="password" class="validate" required>
+                            <input id="password" type="password" class="validate" required name="login_pass">
                             <label for="password">Password *</label>
                             <a href="forgot" methods="get">Forgot Password?</a>
 
@@ -26,7 +28,9 @@
     </div>
 
     </p>
-    <a class="waves-effect waves-teal btn-flat btn-large">Login<i class="material-icons right">input</i></a>
+            <button class="btn waves-effect btn-flat" type="submit" name="action" style="float: right">Login
+                <i class="material-icons right">send</i>
+            </button>
     </form>
     </div>
     <div id="regbox">

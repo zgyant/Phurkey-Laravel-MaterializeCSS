@@ -27,6 +27,7 @@ Route::get('newbook', function () {
 });
 
 
+
 Route::get('forgot', function () {
     return view('forgot');
 });
@@ -71,11 +72,16 @@ Route::get('yakana/spinal/admin/login',function()
 {
     return view('backend/login');
 })->name('adminlogin');
+
 Route::get('yakana/spinal/admin',function()
 {
     return view('backend/backend');
 });
 
+
+Route::get('yakana/spinal/admin/view_user/{id}', function ($id) {
+    return view('theme/backend/dashboard/view_user',['id'=>$id]);
+});
 
 //Register Route
 
@@ -96,6 +102,10 @@ Route::get('yakana/spinal/admin/logout','AdminAccountController@logout');
 Route::get('yakana/spinal/logout','AdminAccountController@logout');
 //checkdata
 Route::post('checkdata', 'AccountController@checkdata');
+
+Route::get('/yakana/spinal/admin/getAdminsDetails','AdminAccountController@getAdminDetails');
+Route::get('/yakana/spinal/admin/getUsersDetails','AccountController@getUsersDetails');
+
 
 //add book
 Route::post('add_book', 'BookController@store');

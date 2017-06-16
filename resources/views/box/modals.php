@@ -31,31 +31,37 @@
                 </br>
             </form>
         </div>
-        <div id="register" class="col s12">
-            <form class="col s12" action="create_user" method="post">
-                <input type="hidden" name="_token" value="<?= csrf_token();?>">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="icon_prefix" name="full_name" type="text" required class="validate">
-                        <label for="icon_prefix" style="font-size: 90%;">Full Name</label>
+<?php
+if(Session::has('user_email'))
+{
+
+}
+else{
+    echo "        <div id=\"register\" class=\"col s12\">
+            <form class=\"col s12\" action=\"create_user\" method=\"post\">
+                <input type=\"hidden\" name=\"_token\" value=\"<?= csrf_token();?>\">
+                <div class=\"row\">
+                    <div class=\"input-field col s6\">
+                        <i class=\"material-icons prefix\">account_circle</i>
+                        <input id=\"icon_prefix\" name=\"full_name\" type=\"text\" required class=\"validate\">
+                        <label for=\"icon_prefix\" style=\"font-size: 90%;\">Full Name</label>
                     </div>
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">star</i>
-                        <input id="user_name_reg" name="user_name" type="text" required class="validate">
-                        <label for="icon_prefix" style="font-size: 90%;">Username</label>
-                        <span id="name_status"></span>
+                    <div class=\"input-field col s6\">
+                        <i class=\"material-icons prefix\">star</i>
+                        <input id=\"user_name_reg\" name=\"user_name\" type=\"text\" required class=\"validate\">
+                        <label for=\"icon_prefix\" style=\"font-size: 90%;\">Username</label>
+                        <span id=\"name_status\"></span>
                     </div>
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">email</i>
-                        <input id="email_reg" name="email" type="text" required class="validate" >
-                        <label for="icon_prefix" style="font-size: 90%;">Email</label>
-                        <span id="email_status"></span>
+                    <div class=\"input-field col s6\">
+                        <i class=\"material-icons prefix\">email</i>
+                        <input id=\"email_reg\" name=\"email\" type=\"text\" required class=\"validate\" >
+                        <label for=\"icon_prefix\" style=\"font-size: 90%;\">Email</label>
+                        <span id=\"email_status\"></span>
                     </div>
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">lock</i>
-                        <input id="icon_telephone" name="password" required type="password" class="validate">
-                        <label for="icon_telephone" style="font-size: 90%;">Password</label>
+                    <div class=\"input-field col s6\">
+                        <i class=\"material-icons prefix\">lock</i>
+                        <input id=\"icon_telephone\" name=\"password\" required type=\"password\" class=\"validate\">
+                        <label for=\"icon_telephone\" style=\"font-size: 90%;\">Password</label>
                     </div>
                     </br></br></br>
                     <p>
@@ -63,16 +69,18 @@
 
                     <p>
                 </div>
-                <blockquote>I agree with all the <a href="/terms">terms and conditions</a> of
+                <blockquote>I agree with all the <a href=\"/terms\">terms and conditions</a> of
                     Phurkey.
                 </blockquote>
-                <button class="btn waves-effect btn-flat" type="submit" name="action" style="float: right">
+                <button class=\"btn waves-effect btn-flat\" type=\"submit\" name=\"action\" style=\"float: right\">
                     Register
-                    <i class="material-icons right">send</i>
+                    <i class=\"material-icons right\">send</i>
                 </button>
                 </br>
             </form>
         </div>
+";
+}?>
     </div>
 </div>
 

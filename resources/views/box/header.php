@@ -56,7 +56,18 @@ Developed by Yakana IT Solutions
                 <li> <a  href="#categories">Categories</a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="drowndownmain1">Share a Book
                         <i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a href="#loginreg" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Login/Register"><i class="material-icons">account_circle</i></a></li>
+                <?php
+                if(Session::has('user_email'))
+                {
+                    echo "                <li><a href=\"/dashboard\" class=\"tooltipped\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\"Dashboard\"><i class=\"material-icons\">home</i></a></li>
+";
+                }
+                else{
+                    echo "                <li><a href=\"#loginreg\" class=\"tooltipped\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\"Login/Register\"><i class=\"material-icons\">account_circle</i></a></li>
+";
+                }
+                ?>
+
             </ul>
 
 
@@ -66,10 +77,16 @@ Developed by Yakana IT Solutions
                 <li><a class="dropdown-button" href="#!" data-activates="drowndownmain">Share a Book
                         <i class="material-icons right">arrow_drop_down</i></a></li>
                 <li class="divider"></li>
+                <?php
+                if(Session::has('user_email'))
+                {
+                    echo "<li><a href='/dashboard'><i class='material-icons'>account_circle</i>Dashboard</a></li>";
+                }
+                else{
+                    echo "<li><a href='#loginreg'><i class='material-icons'>account_circle</i>Login/Register</a></li>";
+                }
+                ?>
 
-          
-                <li><a href="#loginreg"><i class="material-icons">account_circle</i>Login/Register</a></li>
-              
             </ul>
 
 

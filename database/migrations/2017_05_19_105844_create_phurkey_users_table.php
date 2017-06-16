@@ -21,6 +21,11 @@ class CreatePhurkeyUsersTable extends Migration
             $table->string('password',100);
             $table->string('reg_ip_address',50);
             $table->string('reg_date');
+            $table->string('sex')->nullable();
+            $table->string('date_ob')->nullable();
+            $table->string('address',100)->nullable();
+            $table->text('profile_image')->nullable();
+            $table->text('descriptions')->nullable();
             $table->string('conf_code',100)->unique();
             $table->boolean('activated');
 

@@ -1,3 +1,7 @@
+<?php
+$useremail=Session::get('user_email');
+$userdetails=\App\phurkey_users::where('email',$useremail)->get();
+?>
 <style>
    #scrolltab
    {
@@ -25,7 +29,12 @@
 
         <h5>My Dashboard</h5><hr/>
            <span class="right-align">
-               <p>Welcome,<a class="nav-link ml-auto" href="#"> Jayant Mishra </a></p>
+               <p>Welcome,<a class="nav-link ml-auto" href="#"> <?php
+                       foreach($userdetails as $userdetail)
+                       {
+                           echo $userdetail->full_name;
+                       }
+                       ?> </a></p>
                </span>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -35,9 +44,9 @@
             </p>
 
             <div class="left-align" style="width: 25%;padding: 5px">
-                Last Login: <span class="red-text"><?= date('Y-m-d');?></span>
+                Date: <span class="red-text"><?= date('Y-m-d');?></span>
                 <p>Current IP: <span class="purple-text"><?=Request::ip();?></span></p>
-                <p><a href="logout">End Session</a> </p>
+                <p><a href="logout">Logout</a> </p>
                </div>
             <h5>You have</h5><hr/>
             <div class="center-align" style="width:100%;min-height:55px;padding:10px">
@@ -65,39 +74,43 @@
             <span style=" float: left;margin-right: 2px;">
                <p><img src="images/profilepic.png" width="150" style="border: 1px solid black"/> </p>
                </span>
+            <?php foreach($userdetails as $userdetail){ ?>
             <div id="infouser" style="margin-bottom: 25px;float: right">
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="full_name" disabled type="text" class="validate">
-                        <label for="full_name" class="black-text">Wayne Rooney</label>
+                        <label for="full_name" class="black-text">Full Name: <b><?= $userdetail->full_name; ?></b></label>
                     </div>
                     <div class="input-field col s6">
                         <input id="disabled" disabled type="text" class="validate">
-                        <label for="disabled" class="black-text">Username</label>
+                        <label for="disabled" class="black-text">Username: <b><?= $userdetail->username; ?></b></label>
                     </div>
                     <div class="input-field col s12">
                         <input id="disabled" disabled type="text" class="validate">
-                        <label for="disabled" class="black-text">email@domain.com</label>
+                        <label for="disabled" class="black-text">Email: <b><?= $userdetail->email; ?></b></label>
                     </div>
                     <div class="input-field col s12">
                         <input id="disabled" disabled type="text" class="validate">
-                        <label for="disabled" class="black-text">*********</label>
+                        <label for="disabled" class="black-text">Password: <b>*********</b></label>
                     </div>
                     <div class="input-field col s12">
                         <input id="disabled" disabled type="text" class="validate">
-                        <label for="disabled" class="black-text">Created on July 11th 2017 </label>
+                        <label for="disabled" class="black-text">Member Since: <b><?= $userdetail->reg_date; ?></b></label>
                     </div>
                     <div class="input-field col s12">
                         <input id="disabled" disabled type="text" class="validate">
-                        <label for="disabled" class="black-text">Kathmandu, Nepal</label>
+                        <label for="disabled" class="black-text">Address: <b><?= $userdetail->address; ?></b></label>
                     </div>
                     <div class="input-field col s12">
-                        <textarea id="bio"disabled class="materialize-textarea black-text" data-length="120">Lorem ipsum dolor sit amet, vel natum iriure iudicabit ut, usu accusamus adolescens at, per cu etiam labitur iudicabit. Quodsi albucius consequuntur et eum, vim no dicant perfecto reformidans. Qui rebum suscipit nominati cu. Vitae noluisse appellantur eos ei, tale denique complectitur eam ut, suavitate maluisset nam ad.</textarea>
+                        <textarea id="bio"disabled class="materialize-textarea black-text" data-length="120">
+                            <?=$userdetail->descriptions;?>
+                        </textarea>
                     </div>
                     <a class="waves-effect waves-teal btn-flat btn-large right-align" href="profile">Edit<i
                             class="material-icons right">edit</i></a>
                 </div>
                 </div>
+            <?php } ?>
             </div>
         <div id="myorders" class="col s12 left-align">
             <h5>My Orders</h5>

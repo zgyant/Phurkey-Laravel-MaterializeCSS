@@ -1,4 +1,5 @@
-<footer class="text-center">Copyright <strong> Yakana IT Solutions</strong></a></footer>
+
+
 
 <div class="modal" id="addWidgetModal">
     <div class="modal-dialog">
@@ -20,9 +21,6 @@
     <!-- /.modal-dalog -->
 </div>
 <!-- /.modal -->
-<!-- script references -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script src="<?= asset("js/scripts.js")?>"></script>
-<script src="<?= asset("js/bootstrap.min.js")?>"></script>
+
 </body>
 </html>

@@ -1,12 +1,13 @@
 <?php
 if(Session::has('user_email'))
 {
-
+    include resource_path("views/box/header.php");
+    include resource_path("views/theme/newbook.php");
+    include resource_path("views/box/footer.php");
 }
 else{
-    return redirect('/');
+    echo "<script>window.location.replace('/account');
+</script>";
 }
-include resource_path("views/box/header.php");
-include resource_path("views/theme/newbook.php");
-include resource_path("views/box/footer.php");
+
 ?>

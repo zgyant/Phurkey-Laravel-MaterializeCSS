@@ -3,6 +3,7 @@ if(Session::has('email'))
 {
     $type=Session::get('admin_type');
     $flashmg=Session::get('flash_message');
+    $email=Session::get('email');
 }
 else
 {
@@ -22,6 +23,19 @@ else
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link href="<?= asset("css/styles.css")?>" rel="stylesheet">
+    <!-- script references -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="<?= asset("js/scripts.js")?>"></script>
+    <script src="<?= asset("js/bootstrap.min.js")?>"></script>
+
+    <script   src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"   integrity="sha256-xI/qyl9vpwWFOXz7+x/9WkG5j/SVnSw21viy8fWwbeE="   crossorigin="anonymous"></script>
+    <!-- DataTables -->
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
+
+
 </head>
 <body>
 <!-- header -->
@@ -38,7 +52,7 @@ else
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> <?=$email;?> <span class="caret"></span></a>
                     <ul id="g-account-menu" class="dropdown-menu" role="menu">
                         <li><a href="#">My Profile</a></li>
                     </ul>

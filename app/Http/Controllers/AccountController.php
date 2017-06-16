@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\phurkey_users;
 use Exception;
 use Hash;
+use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -46,12 +47,13 @@ class AccountController extends Controller
 
         try {
             $user->save();
-            Session::put(['user_email' => $email]);
+            Session::put(['user_email_ua' => $email]);
             Session::flash('flash_message', 'Few More Steps :) ');
             return Redirect::intended('/verifymail');
         } catch (Exception $exp) {
             Session::flash('flash_message', 'Looks like there is already an old account with same Username/Email');
             return Redirect::intended('/register');
+            echo $exp;
         }
 
 
@@ -61,9 +63,18 @@ class AccountController extends Controller
     {
         $email = Input::get('login_email');
         $password = Input::get('login_pass');
+        $activated=phurkey_users::where('activated','1')->where('email',$email)->get();
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            Session::put(['user_email' => $email]);
-            return Redirect::intended('/dashboard');
+             if(count($activated)) {
+                    Session::put(['user_email' => $email]);
+                    return Redirect::intended('/dashboard');
+                }
+                else
+                {
+                    Session::put(['user_email_temp' => $email]);
+                    return Redirect::intended('/verifymail');
+                }
+
         } else {
             Session::put(['flash_message' => 'Invalid Username/Password']);
             return Redirect::intended('/account');
@@ -74,10 +85,14 @@ class AccountController extends Controller
     public function logout(Request $request)
     {
         Session::forget('user_email','flash_message');
+        Session::forget('user_email_temp','flash_message');
         return Redirect::intended('/');
 
     }
-
+    public function getUsersDetails(Request $request)
+    {
+        return Datatables::of(phurkey_users::query())->make(true);
+    }
 //    public function checkdata(Request $request)
 //    {
 //        if(Input::get('user_name'))

@@ -14,23 +14,23 @@
                 <input type="hidden" name="_token" value="<?= csrf_token();?>">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="full_name" type="text" required class="validate">
+                        <input name="full_name" type="text" required class="validate">
                         <label for="full_name">Full Name</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="username" type="text" class="validate">
+                        <input name="user_name" type="text" class="validate">
                         <label for="username">Username</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate"required>
+                        <input name="email" type="email" class="validate"required>
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate"required>
+                        <input name="password" type="password" class="validate"required>
                         <label for="password">Password</label>
                     </div>
                 </div>
