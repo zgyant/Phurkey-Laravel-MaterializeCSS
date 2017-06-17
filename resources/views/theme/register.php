@@ -11,7 +11,7 @@
         <h6 class="left-align">Fll out the form below to create a new account.</h6>
         <div class="row">
             <form class="col s12" action="create_user" method="post">
-                <input type="hidden" name="_token" value="<?= csrf_token();?>">
+               <input type="hidden" name="_token" value="<?= csrf_token();?>">
                 <div class="row">
                     <div class="input-field col s6">
                         <input name="full_name" type="text" required class="validate">
