@@ -71,10 +71,11 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
         <div id="accinfo" class="col s12 left-align">
             <h5>Account Info</h5>
             <hr/>
-            <span style=" float: left;margin-right: 2px;">
-               <p><img src="images/profilepic.png" width="150" style="border: 1px solid black"/> </p>
-               </span>
+
             <?php foreach($userdetails as $userdetail){ ?>
+                <span style=" float: left;margin-right: 2px;">
+               <p><img src="<?= asset("images/user_profile").'/'.$userdetail->profile_image;?>" width="150" height="180" style="border: 1px solid black"/> </p>
+               </span>
             <div id="infouser" style="margin-bottom: 25px;float: right">
                 <div class="row">
                     <div class="input-field col s6">
