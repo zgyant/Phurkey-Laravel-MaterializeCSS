@@ -72,7 +72,7 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="price_book" type="text" name="price_book" class="validate" required>
-                        <label for="price_book">Book Price</label>
+                        <label for="price_book">Book Price *In NRS</label>
                     </div>
                     <div class="file-field input-field col s6 tooltipped" data-position="bottom" data-delay="50"
                          data-tooltip="Upload one or more snaps of the book">

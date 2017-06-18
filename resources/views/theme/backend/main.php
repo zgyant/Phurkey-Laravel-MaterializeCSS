@@ -7,7 +7,7 @@ if(isset($_GET['action']))
     }
     if($_GET['action']=='books')
     {
-        include resource_path('views/theme/backend/dashboard/categories.php');
+        include resource_path('views/theme/backend/dashboard/books.php');
     }
     if($_GET['action']=='users')
     {

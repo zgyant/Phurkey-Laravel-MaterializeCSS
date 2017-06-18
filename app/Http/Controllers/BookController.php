@@ -56,6 +56,9 @@ class BookController extends Controller
 
         $book->price = Input::get('price_book');
 
+
+        $book->activated='1';
+
         $bookname=Input::file('book_image');
 
         $bookNameafter=$bookname->getClientOriginalName();
@@ -77,9 +80,9 @@ class BookController extends Controller
         $book->book_condition = Input::get('book_condition');
 
         try{
-         
+
             $book->save();
-            Session::flash('flash_message', 'Book information added successfully :) '); 
+            Session::flash('flash_message', 'Book information added successfully :) ');
 
             return redirect('/booklist');
 
