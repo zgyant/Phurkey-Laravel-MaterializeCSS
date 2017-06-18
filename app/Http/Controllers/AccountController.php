@@ -116,4 +116,15 @@ class AccountController extends Controller
 //            exit();
 //        }
 //    }
+
+    public function update($id)
+    {
+
+        $userUpdate=Request::all();
+        $user=phurkey_users::find($id);
+        $user->update($userUpdate);
+        return Redirect('/resources/views/theme/profile.php');
+
+    }
+
 }

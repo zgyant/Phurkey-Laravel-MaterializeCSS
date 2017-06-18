@@ -37,7 +37,7 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
            ?>
             <div class="collapsible-body">
                 <div class="row">
-                    <form class="col s12" action="update_profile" method="post">
+                    <form class="col s12" action="update_profile" method="PATCH">
                         <div id="profilepic" style="width: 140px;float: left;margin-right: 20%">
                             <div class="image-upload file-field ">
                                 <label for="file-input">

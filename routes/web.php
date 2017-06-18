@@ -110,3 +110,9 @@ Route::get('/yakana/spinal/admin/getUsersDetails','AccountController@getUsersDet
 //add book
 Route::post('add_book', 'BookController@store');
 
+//edit profile
+//Route::
+
+
+//Update profile
+Route::patch('update_profile/{id}', 'AccountController@update')
