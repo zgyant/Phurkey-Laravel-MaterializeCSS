@@ -1,7 +1,8 @@
+
 <!-- Main -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <!-- Left column -->
             <a href="?action=settings"><strong><i class="glyphicon glyphicon-wrench"></i> Settings</strong></a>
             <hr>
@@ -11,20 +12,20 @@
                     <ul class="nav nav-stacked collapse in" id="userMenu">
                         <li class="active"> <a href="admin"><i class="glyphicon glyphicon-home"></i> Home</a></li>
                         <li><a href="?action=categories"><i class="glyphicon glyphicon-duplicate"></i> Categories <span class="badge badge-info">4</span></a></li>
-                        <li><a href="?action=books"><i class="glyphicon glyphicon-book"></i> Books</a></li>
-                        <li><a href="?action=users"><i class="glyphicon glyphicon-user"></i> Users</a></li>
-                        <li><a href="?action=advertisement"><i class="glyphicon glyphicon-flag"></i> Advertisement</a></li>
-                        <li><a href="?action=admin"><i class="glyphicon glyphicon-star"></i> Administrators</a></li>
+                        <li><a href="?action=books"><i class="glyphicon glyphicon-book"></i> Books <span class="badge badge-info"><?=\App\book::count(); ?></span></a></li>
+                        <li><a href="?action=users"><i class="glyphicon glyphicon-user"></i> Users <span class="badge badge-info"><?=\App\phurkey_users::count(); ?></span></a></li>
+                        <li><a href="?action=advertisement"><i class="glyphicon glyphicon-flag"></i> Advertisement </a></li>
+                        <li><a href="?action=admin"><i class="glyphicon glyphicon-star"></i> Administrators <span class="badge badge-info"><?=\App\phurkey_admins::count(); ?></span></a></li>
                         <li><a href="logout"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
                     </ul>
                 </li>
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Overalls <i class="glyphicon glyphicon-chevron-right"></i></a>
 
                     <ul class="nav nav-stacked collapse" id="menu2">
-                        <li><a href="?action=overall_books">Books</a>
-                        </li>
-                        <li><a href="?action=overall_users">Users</a>
-                        </li>
+<!--                        <li><a href="?action=overall_books">Books</a>-->
+<!--                        </li>-->
+<!--                        <li><a href="?action=overall_users">Users</a>-->
+<!--                        </li>-->
                         <li><a href="https://developers.google.com/gmail/api/">Google Developer</a>
                         </li>
                     </ul>
