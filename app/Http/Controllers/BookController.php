@@ -44,6 +44,8 @@ class BookController extends Controller
 
         $book->book_name = Input::get('book_name');
 
+        $book->uploader_email=Session::get('user_email');
+
         $book->authur_name = Input::get('author_name');
 
         $book->publisher_name = Input::get('publisher_name');
@@ -54,7 +56,7 @@ class BookController extends Controller
 
         $book->price = Input::get('price_book');
 
-        $bookname=Input::file('book_name');
+        $bookname=Input::file('book_image');
 
         $bookNameafter=$bookname->getClientOriginalName();
 
