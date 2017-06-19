@@ -85,7 +85,9 @@ else {
             </div>
         </div>
     </div>
-
+    <?php
+}
+?>
     <!-- Modal Structure Categories -->
     <div id="categories" class="modal bottom-sheet">
         <div class="modal-content">
@@ -181,6 +183,3 @@ else {
             </form> </p>
         </div>
     </div>
-    <?php
-}
-?>

@@ -1,3 +1,10 @@
+<?php
+use App\book;
+
+$booklists=book::paginate(15);
+
+?>
+
     <div id="left-bigyapan">
         <!-- width 205 height 279-->
         <img src="<?= asset('images/ad1.jpg')?>" width="100%" height="100%"/>
@@ -31,36 +38,54 @@
             <h5 style="border-bottom: dotted black 1px;margin-bottom:15px;text-transform: capitalize"><?php if(isset($title)){echo $title;}else{echo 'Available Books';} ?></h5>
 
             <div class="row">
-                <div class="col s12 m4">
-                    <a href="#">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="<?= asset('images/background.jpg')?>">
-                            <span class="card-title">Title</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light materialize-red tooltipped"
-                               data-position="bottom" data-delay="50" data-tooltip="Share this with friends"
-                            ><i class="material-icons">share</i></a>
-                        </div>
-                        <div class="card-content">
-                            <p>Publisher : </p>
+                <?php
+                foreach($booklists as  $booklist) {
 
-                            <p>Condition : </p>
+                    ?>
+                    <div class="col s12 m4">
+                        <a href="#">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img style="width: 100%;height: 250px;" src="<?= asset('images/book_uploads/').'/'.$booklist->image; ?>">
+                                    <span class="card-title"><?=$booklist->book_name;?></span>
+                                    <a class="btn-floating halfway-fab waves-effect waves-light materialize-red tooltipped"
+                                       data-position="bottom" data-delay="50" data-tooltip="Share this with friends"
+                                    ><i class="material-icons">share</i></a>
+                                </div>
+                                <div class="card-content">
+                                    <p>Publisher : <?=$booklist->publisher_name;?></p>
 
-                            <p>Genre : </p>
-                        </div>
+                                    <p>Condition : <?=$booklist->book_condition;?></p>
+
+                                    <p>Genre : <?=$booklist->genre;?></p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    </a>
-                </div>
+                    <?php
+                }
+                ?>
             </div>
+            <style>
+                .pagination li
+                {
+                    width: 20px;
+                }
+
+            </style>
             <ul class="pagination right-align">
-                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                <li class="active"><a href="#!">1</a></li>
-                <li class="waves-effect"><a href="#!">2</a></li>
-                <li class="waves-effect"><a href="#!">3</a></li>
-                <li class="waves-effect"><a href="#!">4</a></li>
-                <li class="waves-effect"><a href="#!">5</a></li>
-                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+<!--                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>-->
+<!--                <li class="active"><a href="#!">1</a></li>-->
+<!--                <li class="waves-effect"><a href="#!">2</a></li>-->
+<!--                <li class="waves-effect"><a href="#!">3</a></li>-->
+<!--                <li class="waves-effect"><a href="#!">4</a></li>-->
+<!--                <li class="waves-effect"><a href="#!">5</a></li>-->
+<!--                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>-->
+                <?php
+                echo $booklists->links();
+                ?>
             </ul>
+
         </div>
     </div>
 

@@ -103,9 +103,7 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
                         <label for="disabled" class="black-text">Address: <b><?= $userdetail->address; ?></b></label>
                     </div>
                     <div class="input-field col s12">
-                        <textarea id="bio"disabled class="materialize-textarea black-text" data-length="120">
-                            <?=$userdetail->descriptions;?>
-                        </textarea>
+                        <textarea id="bio"disabled class="materialize-textarea black-text" data-length="120" style="font-weight: bold;"><?=$userdetail->descriptions;?></textarea>
                     </div>
                     <a class="waves-effect waves-teal btn-flat btn-large right-align" href="profile">Edit<i
                             class="material-icons right">edit</i></a>
