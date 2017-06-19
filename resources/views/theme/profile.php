@@ -37,7 +37,8 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
            ?>
             <div class="collapsible-body">
                 <div class="row">
-                    <form class="col s12" action="update_profile" method="PATCH">
+                    <form class="col s12" action="update_profile/<?=$userdetail->id;?>" method="post">
+                    <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
                         <div id="profilepic" style="width: 140px;float: left;margin-right: 20%">
                             <div class="image-upload file-field ">
                                 <label for="file-input">

@@ -120,10 +120,31 @@ class AccountController extends Controller
     public function update($id)
     {
 
-        $userUpdate=Request::all();
-        $user=phurkey_users::find($id);
-        $user->update($userUpdate);
-        return Redirect('/resources/views/theme/profile.php');
+        
+        $userdetails = phurkey_users::findOrFail($id);
+
+        $userdetails->full_name = Input::get('full_name');
+
+        $userdetails->email = Input::get('email'); 
+        //$email = Input::get('email');
+
+        $userdetails->password = Hash::make(Input::get('password')); 
+
+        //$userdetails->username = Input::get('user_name'); 
+
+         try{
+
+            $userdetails->save();
+            Session::flash('flash_message', 'Update Successful :) ');
+            return Redirect::intended('/profile');
+
+        }catch(Exception $exc){
+
+            Session::flash('flash_message', 'Something went wrong');
+
+            //return Redirect::intended('/dashboard');
+            
+    }
 
     }
 
