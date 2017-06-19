@@ -80,7 +80,7 @@ Developed by Yakana IT Solutions
                 <?php
                 if(Session::has('user_email'))
                 {
-                    echo "<li><a href='/dashboard'><i class='material-icons'>account_circle</i>Dashboard</a></li>";
+                    echo "<li><a href='/dashboard'><i class='material-icons'>home</i>Dashboard</a></li>";
                 }
                 else{
                     echo "<li><a href='#loginreg'><i class='material-icons'>account_circle</i>Login/Register</a></li>";
