@@ -37,18 +37,20 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
            ?>
             <div class="collapsible-body">
                 <div class="row">
-                    <form class="col s12" name="_method" action="update_profile/<?=$userdetail->id;?>" method="PUT">
+<!--                    <form class="col s12" name="_method" action="update_profile/--><!--" method="POST">-->
+                    <form class="col s12" action="update_profile/<?=$userdetail->id;?>" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
                         <div id="profilepic" style="width: 140px;float: left;margin-right: 20%">
                             <div class="image-upload file-field ">
                                 <label for="file-input">
-                                    <img src="images/profilepic.png" width="140" style="cursor: pointer"
+                                    <img src="<?=asset('images/user_profile/').'/'.$userdetail->profile_image;?>" width="140" style="cursor: pointer"
                                          class="tooltipped" data-position="top" data-delay="50"
                                          data-tooltip="Click to change"/>
                                 </label>
-                                <input id="file-input" type="file" accept="image/*"/>
+                                <input id="file-input" type="file" accept="image/*" name="profile_img"/>
 
                                 <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
+                                    <input class="file-path validate" type="text" name="profile_img" value="<?=$userdetail->profile_image;?>">
                                 </div>
                             </div>
                         </div>
@@ -65,12 +67,12 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" disabled type="email" class="validate" value="<?=$userdetail->email;?>">
-                                <label for="email">email@phurkey.com</label>
+                                <label for="email">Email Address</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="password" type="password" class="validate" name="password" required>
+                                <input id="password" type="password" class="validate" name="password" disabled>
                                 <label for="password">Password</label>
                             </div>
                         </div>
@@ -88,38 +90,37 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
                                 </p>
 
                                 <p>
-                                    <input name="group1" type="radio" id="male" disabled/>
+                                    <input name="group1" type="radio" id="male" value="male" required />
                                     <label for="male">Male</label>
                                 </p>
 
                                 <p>
-                                    <input name="group1" type="radio" id="female" disabled/>
+                                    <input name="group1" type="radio" id="female" value="female" required />
                                     <label for="female">Female</label>
                                 </p>
 
                                 <p>
-                                    <input name="group1" type="radio" id="other" disabled/>
+                                    <input name="group1" type="radio" id="other" value="other" required/>
                                     <label for="other">Other</label>
                                 </p>
                             </div>
                         </div>
                         <br/>
 
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input type="text" list="cars" required/>
-                                <datalist id="cars">
-                                    <option value="Student">Student</option>
-                                    <option value="Teacher">Teacher</option>
-                                    <option value="Casual">Casual Reader</option>
-                                </datalist>
-                                <label>I'm a</label>
-                            </div>
-                        </div>
+<!--                        <div class="row">-->
+<!--                            <div class="input-field col s12">-->
+<!--                                <input type="text" list="cars" name="iam" required/>-->
+<!--                                <datalist id="cars">-->
+<!--                                    <option value="Student">Student</option>-->
+<!--                                    <option value="Teacher">Teacher</option>-->
+<!--                                    <option value="Casual">Casual Reader</option>-->
+<!--                                </datalist>-->
+<!--                                <label>I'm a</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                         <div class="input-field col s12">
-                            <textarea class="materialize-textarea" data-length="120" placeholder="Something about yourself"><?=$userdetail->descriptions;?>
-                            </textarea>
+                            <textarea class="materialize-textarea" data-length="120" name="aboutuser" placeholder="Something about yourself"><?=$userdetail->descriptions;?></textarea>
                         </div>
 
                         <button class="btn waves-effect btn-flat" type="submit" name="action" style="float: right">Update Profile

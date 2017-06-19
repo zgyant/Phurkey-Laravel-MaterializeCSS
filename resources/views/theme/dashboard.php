@@ -29,7 +29,7 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
 
         <h5>My Dashboard</h5><hr/>
            <span class="right-align">
-               <p>Welcome,<a class="nav-link ml-auto" href="#"> <?php
+               <p>Welcome,<a class="nav-link ml-auto" href=""> <?php
                        foreach($userdetails as $userdetail)
                        {
                            echo $userdetail->full_name;
@@ -111,7 +111,7 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
                             class="material-icons right">edit</i></a>
                 </div>
                 </div>
-            <?php } ?>
+            <?php } ?> 
             </div>
         <div id="myorders" class="col s12 left-align">
             <h5>My Orders</h5>

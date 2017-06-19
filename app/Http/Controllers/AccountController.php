@@ -120,10 +120,35 @@ class AccountController extends Controller
     public function update($id)
     {
 
-        $userUpdate=Request::all();
-        $user=phurkey_users::find($id);
-        $user->update($userUpdate);
-        return Redirect('/resources/views/theme/profile.php');
+        $userdetails = phurkey_users::find($id);
+
+
+        $newname=Input::get('fullname');
+        $newaddress= Input::get('address');
+        $newdob=Input::get('dateob');
+        //$newiam=Input::get('iam');
+        $newaboutuser=Input::get('aboutuser');
+
+        $profilename=Input::file('profile_img');
+
+        $destinationPath=base_path(). '/public/images/user_profile/';
+
+        $profNameafter=$profilename->getClientOriginalName();
+
+        $profilename->move($destinationPath,$profNameafter);
+
+        $userdetails->full_name=$newname;
+        $userdetails->address=$newaddress;
+        $userdetails->date_ob=$newdob;
+        $userdetails->descriptions=$newaboutuser;
+
+        $userdetails->profile_image = Input::get('profile_img');
+
+        echo Input::get('profile_img');
+
+       $userdetails->save();
+
+
 
     }
 
