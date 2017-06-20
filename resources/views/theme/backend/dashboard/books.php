@@ -15,7 +15,7 @@ $bookdetails=\App\book::get();
         <th>Price</th>
         <th>Condition</th>
         <th>Exchange/Sell</th>
-        <th>Uploaded Date</th>
+        <th>Uploaded Date/Time</th>
         <th>Action</th>
     </tr>
     </thead>
@@ -36,7 +36,7 @@ $bookdetails=\App\book::get();
             <td><a href="https://en.wikipedia.org/wiki/Special:Search?search=<?=$bookdetail->authur_name;?>" target="_blank"><?=$bookdetail->authur_name;?></a></td>
             <td><a href="https://www.google.com.np/search?q=<?=$bookdetail->publisher_name;?>" target="_blank"><?=$bookdetail->publisher_name;?></a></td>
             <td><a target="_blank" href="<?=asset('images/book_uploads').'/'.$bookdetail->image;?>""><img src="<?=asset('images/book_uploads').'/'.$bookdetail->image;?>" height="40" width="40"/></a></td>
-            <td><a href="mailto:<?=$bookdetail->uploader_email;?>"><?=$bookdetail->uploader_email;?></a></td>
+            <td style="text-transform: lowercase"><a href="mailto:<?=$bookdetail->uploader_email;?>"><?=$bookdetail->uploader_email;?></a></td>
             <td><?=$bookdetail->price;?> NRs</td>
             <td><?=$bookdetail->book_condition;?></td>
             <td><?=$exse;?></td>
