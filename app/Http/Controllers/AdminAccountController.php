@@ -20,7 +20,7 @@ class AdminAccountController extends Controller
         $email = Input::get('login_email');
         $password = Input::get('login_pass');
 
-        $admins = Phurkey_admins:: where('admin_email', $email)->where('password', $password)->first();
+        $admins = Phurkey_admins:: where('admin_email', $email)->where('password', $password)->where('activated','1')->first();
         if ($admins === null) {
             Session::put(['error' => 'ivc']);
             return Redirect::intended('/yakana/spinal/admin/login');

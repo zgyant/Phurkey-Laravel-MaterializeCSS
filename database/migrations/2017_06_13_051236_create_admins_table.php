@@ -22,6 +22,7 @@ class CreateAdminsTable extends Migration
             $table->string('admin_type',50);
             $table->string('admin_email',50)->unique();
             $table->string('admin_contact',60);
+            $table->boolean('activated');
         });
     }
 

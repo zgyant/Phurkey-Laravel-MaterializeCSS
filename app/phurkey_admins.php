@@ -18,6 +18,7 @@ class phurkey_admins extends Model
         'password',
         'admin_type',
         'admin_email',
-        'admin_contact'];
+        'admin_contact',
+        'activated'];
 
 }

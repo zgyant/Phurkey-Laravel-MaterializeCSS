@@ -44,7 +44,6 @@
             <a class="black-text text-lighten-4 right" href="#!" style="margin-left: 10px">Ads info</a>
             <a class="black-text text-lighten-4 right" href="#!" style="margin-left: 10px">Terms</a>
             <a class="black-text text-lighten-4 right" href="#!" style="margin-left: 10px">Privacy</a>
-            <a class="black-text text-lighten-4 right" href="#!" style="margin-left: 10px">Forum</a>
 
         </div>
     </div>
