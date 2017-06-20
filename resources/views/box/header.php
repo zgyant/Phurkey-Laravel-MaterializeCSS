@@ -81,11 +81,11 @@ $websettings=\App\phurkey_website::find(1);
                 <?php
                 if(Session::has('user_email'))
                 {
-                    echo "                <li><a href=\"/dashboard\" class=\"tooltipped\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\"Dashboard\"><i class=\"material-icons\">home</i></a></li>
-";
+                    echo "<li><a href=\"/dashboard\" class=\"tooltipped\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\"Dashboard\"><i class=\"material-icons\">home</i></a></li>";
+                    echo "<li><a href=\"/logout\" class=\"tooltipped\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\"Logout\"><i class=\"material-icons\">lock_open</i></a></li>";
                 }
                 else{
-                    echo "                <li><a href=\"#loginreg\" class=\"tooltipped\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\"Login/Register\"><i class=\"material-icons\">account_circle</i></a></li>
+                    echo "<li><a href=\"#loginreg\" class=\"tooltipped\" data-position=\"bottom\" data-delay=\"50\" data-tooltip=\"Login/Register\"><i class=\"material-icons\">account_circle</i></a></li>
 ";
                 }
                 ?>
