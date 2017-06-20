@@ -34,22 +34,84 @@ $booklists=book::findOrFail($id);
     </div>
     <div id="booklist-vitra">
 
-        <h5 style="border-bottom: dotted black 1px;margin-bottom:15px;text-transform: capitalize"><?=$booklists->book_name;?></h5>
+        <h3 style="border-bottom: dotted black 1px;margin-bottom:15px;text-transform: capitalize;"><?=$booklists->book_name;?> | <?=$booklists->genre;?></h3>
 
         <div class="row">
+                    <img style="width: 30%;float:left;height: 250px;margin-right: 15px;" src="<?= asset('images/book_uploads/').'/'.$booklists->image; ?>"/>
+            <div style="min-height: 250px;"><p><?=$booklists->description;?></p>
+         <p><b>Author: </b><?=$booklists->authur_name;?></p>
+         <p><b>Publisher: </b><?=$booklists->publisher_name;?></p>
+            </div><hr>
+            <p><b>Uploader By: </b><?php
+                    $email= $booklists->uploader_email;
+                    $uploadername=\App\phurkey_users::where('email',$email)->get();
 
-            yaa template banau hai
-           <p>yema chai book ko sab detail
-               uploaded by pani ma email aune uploader ko, uploaded date, ani exchange or sell k ho
-               price kati cha, contact uploader vanne button banau.
-           </p>
+                    foreach($uploadername as $un)
+                    {
+                        echo $un->full_name;
+                    }
 
+                ?>
+            </p>
+            <p><b>Book Price: </b><?=$booklists->price;?> NRs</p>
+            <p><b>Book Condition: </b><?=$booklists->book_condition;?></p>
+            <p><b>Uploaded On: </b><?=$booklists->created_at->toFormattedDateString();?></p>
+            <p><b>Available For: </b>
+                <?php
+                if($booklists->exse==1)
+                {
+                    echo "Buy";
+                }else
+                {
+                    echo "Exchange";
+                }
+                ?></p>
+<hr>
+            <a class="waves-effect waves-light btn right blue" href="#contactuploader"><?php
+                if($booklists->exse==1)
+                {
+                    echo "Buy";
+                }else
+                {
+                    echo "Exchange";
+                }
+                ?></a>
+            <!-- Modal Structure -->
+            <div id="contactuploader" class="modal">
+                <div class="modal-content" style="min-height: 50px;">  <?php
+                    if(Session::has('user_email'))
+                    {
+                        $email=Session::get('useremail');
 
+                        echo" <h4>Message the Uploader</h4>
+                    <div class=\"input-field col s12\">
+                        <textarea id=\"message_book\" class=\"materialize-textarea\" data-length=\"120\" name=\"message_book\" required></textarea>
+                        <label for=\"message_book\">Write your query!</label>
+                    </div>
+                        <a href=\"#!\" class=\"modal-action modal-close waves-effect waves-light btn green right\">Send</a>
+                    <br>
+
+";
+                        echo '<h5>or</h5><p>Contact him directly: <b>';
+                        foreach($uploadername as $un)
+                        {
+                            echo $un->contact_num.'</b></p>';
+                        }
+                    }
+                    else
+                    {
+                        echo 'Please <a href="/account">Login/Register</a> !';
+                    }
+                    ?>
+
+                </div>
+
+            </div>
+           </div>
 
         </div>
-
-
     </div>
+
 </div>
 
 </main>

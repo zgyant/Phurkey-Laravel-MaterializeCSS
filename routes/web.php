@@ -133,3 +133,5 @@ Route::post('yakana/spinal/add_category', 'CategoryController@store');
 Route::post('yakana/spinal/add_category', 'CategoryController@store');
 
 Route::post('yakana/spinal/website_setting', 'WebsiteController@update');
+//Route::post('yakana/spinal/add_category', 'CategoryController@store');
+Route::post('yakana/spinal/add_category', 'CategoryController@store');
