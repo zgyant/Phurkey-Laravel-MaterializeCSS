@@ -35,10 +35,14 @@ $booklists=book::findOrFail($id);
     <div id="booklist-vitra">
 
         <h3 style="border-bottom: dotted black 1px;margin-bottom:15px;text-transform: capitalize;"><?=$booklists->book_name;?> | <?=$booklists->genre;?></h3>
-
+<style>
+    .row p{
+        text-transform: capitalize;
+    }
+</style>
         <div class="row">
                     <img style="width: 30%;float:left;height: 250px;margin-right: 15px;" src="<?= asset('images/book_uploads/').'/'.$booklists->image; ?>"/>
-            <div style="min-height: 250px;"><p><?=$booklists->description;?></p>
+            <div style="min-height: 250px;"><?=$booklists->description;?>
          <p><b>Author: </b><?=$booklists->authur_name;?></p>
          <p><b>Publisher: </b><?=$booklists->publisher_name;?></p>
             </div><hr>

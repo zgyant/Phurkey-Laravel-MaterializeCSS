@@ -33,6 +33,7 @@ else
 
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
 
 
 

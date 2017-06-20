@@ -21,6 +21,10 @@
     <!-- /.modal-dalog -->
 </div>
 <!-- /.modal -->
-
+<script>
+    CKEDITOR.replace( 'meta_desc' );
+    CKEDITOR.replace('meta_key');
+    CKEDITOR.replace('about');
+</script>
 </body>
 </html>

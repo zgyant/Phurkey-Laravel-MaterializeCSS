@@ -25,7 +25,7 @@
                     <div class="input-field col s12">
                         <form method="post" action="#">
                             <input id="icon_prefix" type="text" class="validate">
-                            <label for="icon_prefix" style="font-size: 90%;"><?=$websettings->email;?></label>
+                            <label for="icon_prefix" style="font-size: 90%;">Email Address</label>
                             <input type="submit" hidden/>
                         </form>
                     </div>
@@ -262,5 +262,6 @@
     }
 
 </script>
+
 
 </html>
