@@ -126,5 +126,5 @@ Route::post('update_profile/{id}', 'AccountController@update');
 
 
 //add new category
-Route::post('yakana/spinal/add_category', 'CategoryController@store');
+//Route::post('yakana/spinal/add_category', 'CategoryController@store');
 Route::post('yakana/spinal/add_category', 'CategoryController@store');
