@@ -7,12 +7,22 @@
                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
+                <style>
+                    .selectcat span label{
+                        color:red;
+                    }
+                </style>
                 <div class="input-field col s2 selectcat">
-                    <select multiple>
+                    <select>
                         <option value="" disabled selected>Categories</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        <?php
+                        $categories=\App\phurkey_category::orderBy('category_name','asc')->get();
+                        foreach($categories as $category) {
+                            ?>
+                            <option value="<?=$category->category_name;?>"><?=$category->category_name;?></option>
+                            <?php
+                        }
+                        ?>
                     </select>
                 </div>
                 <style>

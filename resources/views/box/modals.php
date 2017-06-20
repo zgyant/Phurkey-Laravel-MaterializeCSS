@@ -92,61 +92,17 @@ else {
     <div id="categories" class="modal bottom-sheet">
         <div class="modal-content">
             <h4>Categories</h4>
-            <a href="/booklist/fictional">
+            <?php
+            $categories=\App\phurkey_category::orderBy('category_name','asc')->get();
+            foreach($categories as $category)
+            {?>
+            <a href="/booklist/<?=$category->category_name;?>">
                 <div class="chip">
-                    <img src="<?= asset('images/fictionalicon.png') ?>" alt="Fictional">
-                    Fictional
-                </div>
-            </a><a href="/booklist/geographical/">
-                <div class="chip">
-                    <img src="<?= asset('images/geoicon.png') ?>" alt="Geographical">
-                    Geographical
-                </div>
-            </a><a href="/booklist/kids/">
-                <div class="chip">
-                    <img src="<?= asset('images/kidsicon.png') ?>" alt="Kids">
-                    Kids
-                </div>
-            </a><a href="/booklist/lifestyle/">
-                <div class="chip">
-                    <img src="<?= asset('images/lifeicon.png') ?>" alt="Lifestyle">
-                    Lifestyle
-                </div>
-            </a><a href="/booklist/technology/">
-                <div class="chip">
-                    <img src="<?= asset('images/techicon.png') ?>" alt="Technology">
-                    Technology
-                </div>
-            </a><a href="/booklist/textbooks/">
-                <div class="chip">
-
-                    <img src="<?= asset('images/txticon.png') ?>" alt="Textbooks">
-                    Textbooks
+                    <img src="<?= asset('images/category_image/').'/'.$category->cat_image;?>" alt="Fictional">
+                    <?=$category->category_name;?>
                 </div>
             </a>
-            <a href="/booklist/drama/">
-                <div class="chip">
-                    <img src="<?= asset('images/dramaicon.png') ?>" alt="Drama">
-                    Drama
-                </div>
-            </a>
-            <a href="/booklist/biography/">
-                <div class="chip">
-                    <img src="<?= asset('images/bioicon.png') ?>" alt="Biography">
-                    Biography
-                </div>
-            </a>
-            <a href="/booklist/religion/">
-                <div class="chip">
-                    <img src="<?= asset('images/relicon.png') ?>" alt="Religion">
-                    Religion
-                </div>
-            </a> <a href="/booklist/question/">
-                <div class="chip">
-                    <img src="<?= asset('images/quesicon.png') ?>" alt="Question Bank">
-                    Question Bank
-                </div>
-            </a>
+            <?php } ?>
 
         </div>
     </div>

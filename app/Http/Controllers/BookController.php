@@ -96,5 +96,23 @@ class BookController extends Controller
         }
 
     }
+    public function enable_book(Request $request,$id)
+    {
+        $books=book::find($id);
+
+        $books->activated='1';
+        $books->save();
+
+        return redirect('/yakana/spinal/admin?action=books');
+    }
+    public function book_delete(Request $request,$id)
+    {
+        $books=book::find($id);
+
+        $books->activated='0';
+        $books->save();
+
+        return redirect('/yakana/spinal/admin?action=books');
+    }
     
 }

@@ -1,7 +1,13 @@
 <?php
 use App\book;
-
-$booklists=book::paginate(15);
+if(isset($title))
+{
+    $booklists=book::where('genre',$title)->where('activated','1')->paginate(15);
+}
+else
+{
+    $booklists=book::where('activated','1')->paginate(15);
+}
 
 ?>
 

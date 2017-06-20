@@ -56,12 +56,14 @@
                 <div class="input-field col s12 left-align row">
                     <select id="condition" name="genre" required>
                         <option value="" disabled selected>Choose the genre/category of the book</option>
-                        <option value="1">Fictional</option>
-                        <option value="2">Science</option>
-                        <option value="3">Novel</option>
-                        <option value="3">Horror</option>
-                        <option value="3">Romantic</option>
-                        <option value="3">Religion</option>
+                        <?php
+                        $categories=\App\phurkey_category::orderBy('category_name','asc')->get();
+                        foreach($categories as $category) {
+                            ?>
+                            <option value="<?=$category->category_name;?>"><?=$category->category_name;?></option>
+                            <?php
+                        }
+                        ?>
                     </select>
                     <label>Genre & Category</label>
                 </div>

@@ -11,7 +11,7 @@
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Website Contents <i class="glyphicon glyphicon-chevron-down"></i></a>
                     <ul class="nav nav-stacked collapse in" id="userMenu">
                         <li class="active"> <a href="admin"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                        <li><a href="?action=categories"><i class="glyphicon glyphicon-duplicate"></i> Categories <span class="badge badge-info">4</span></a></li>
+                        <li><a href="?action=categories"><i class="glyphicon glyphicon-duplicate"></i> Categories <span class="badge badge-info"><?=\App\phurkey_category::count(); ?></span></a></li>
                         <li><a href="?action=books"><i class="glyphicon glyphicon-book"></i> Books <span class="badge badge-info"><?=\App\book::count(); ?></span></a></li>
                         <li><a href="?action=users"><i class="glyphicon glyphicon-user"></i> Users <span class="badge badge-info"><?=\App\phurkey_users::count(); ?></span></a></li>
                         <li><a href="?action=advertisement"><i class="glyphicon glyphicon-flag"></i> Advertisement </a></li>
