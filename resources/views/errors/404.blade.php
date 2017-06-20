@@ -37,7 +37,7 @@ Kathmandu, Nepal
 <body>
 <div class="wrapper">
     <div class="content-wrap">
-        <img src="images/logo.png"width="120" />
+        <img src="<?=asset('images/logo.png')?>" width="120" />
 
         <div class="header">
 
