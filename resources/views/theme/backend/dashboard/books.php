@@ -30,7 +30,7 @@ $bookdetails=\App\book::get();
             $exse='<span style="color:Blue">Sell</span>';
         }
         ?>
-        <tr>
+        <tr style="text-transform: capitalize">
             <td><?=$bookdetail->id;?></td>
             <td><?=$bookdetail->book_name;?></td>
             <td><a href="https://en.wikipedia.org/wiki/Special:Search?search=<?=$bookdetail->authur_name;?>" target="_blank"><?=$bookdetail->authur_name;?></a></td>

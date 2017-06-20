@@ -9,6 +9,7 @@ $userdetails=\App\phurkey_users::get();
         <th>Full Name</th>
         <th>Username</th>
         <th>Email</th>
+        <th>Contact Number</th>
         <th>Action</th>
     </tr>
     </thead>
@@ -23,6 +24,7 @@ $userdetails=\App\phurkey_users::get();
                    data-target="#user_detail" href="admin/view_user/<?=$userdetail->id?>"><?=$userdetail->full_name;?></a></td>
             <td><?=$userdetail->username;?></td>
             <td><?=$userdetail->email;?></td>
+            <td><?=$userdetail->contact_num;?></td>
             <?php
                 if($userdetail->activated=='1')
                 {
@@ -42,7 +44,7 @@ $userdetails=\App\phurkey_users::get();
 </table>
 
 <!-- Modal -->
-<div class="modal fade" id="user_detail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="user_detail"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="min-height: 250px;background: black">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

@@ -89,12 +89,12 @@
                     <div class="input-field col s6">
                         <select id="condition" name="book_condition" required>
                             <option value="" disabled selected>Choose the condition of the book</option>
-                            <option value="1">Old</option>
-                            <option value="2">New</option>
-                            <option value="3">Slightly Used</option>
-                            <option value="3">Poor</option>
-                            <option value="3">Average</option>
-                            <option value="3">Missing Pages</option>
+                            <option value="old">Old</option>
+                            <option value="new">New</option>
+                            <option value="slightly used">Slightly Used</option>
+                            <option value="poor">Poor</option>
+                            <option value="average">Average</option>
+                            <option value="missing pages">Missing Pages</option>
                         </select>
                         <label>Condition</label>
                     </div>

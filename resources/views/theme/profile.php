@@ -84,23 +84,29 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
+                                <input id="" type="text"  name="contact_num" value="<?=$userdetail->contact_num;?>" required>
+                                <label for="autocomplete="" ">Contact Number</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
                                 <p>
                                     <label for="dateob" class="">Date of Birth</label>
                                     <input type="date" id="dateob" class="datepicker" name="dateob" required>
                                 </p>
 
                                 <p>
-                                    <input name="group1" type="radio" id="male" value="male" required />
+                                    <input name="sex" type="radio" id="male" value="male" required />
                                     <label for="male">Male</label>
                                 </p>
 
                                 <p>
-                                    <input name="group1" type="radio" id="female" value="female" required />
+                                    <input name="sex" type="radio" id="female" value="female" required />
                                     <label for="female">Female</label>
                                 </p>
 
                                 <p>
-                                    <input name="group1" type="radio" id="other" value="other" required/>
+                                    <input name="sex" type="radio" id="other" value="other" required/>
                                     <label for="other">Other</label>
                                 </p>
                             </div>

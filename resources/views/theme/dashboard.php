@@ -82,17 +82,25 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
                         <input id="full_name" disabled type="text" class="validate">
                         <label for="full_name" class="black-text">Full Name: <b><?= $userdetail->full_name; ?></b></label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col s3">
                         <input id="disabled" disabled type="text" class="validate">
                         <label for="disabled" class="black-text">Username: <b><?= $userdetail->username; ?></b></label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input id="disabled" disabled type="text" class="validate">
+                        <label for="disabled" class="black-text">Sex: <b><?= $userdetail->sex; ?></b></label>
                     </div>
                     <div class="input-field col s12">
                         <input id="disabled" disabled type="text" class="validate">
                         <label for="disabled" class="black-text">Email: <b><?= $userdetail->email; ?></b></label>
                     </div>
-                    <div class="input-field col s12">
+                    <div class="input-field col s6">
                         <input id="disabled" disabled type="text" class="validate">
                         <label for="disabled" class="black-text">Password: <b>*********</b></label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="disabled" disabled type="text" class="validate">
+                        <label for="disabled" class="black-text">Contact Number: <b><?=$userdetail->contact_num;?></b></label>
                     </div>
                     <div class="input-field col s12">
                         <input id="disabled" disabled type="text" class="validate">

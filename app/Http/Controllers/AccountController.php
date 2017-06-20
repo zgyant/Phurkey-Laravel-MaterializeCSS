@@ -129,26 +129,39 @@ class AccountController extends Controller
         //$newiam=Input::get('iam');
         $newaboutuser=Input::get('aboutuser');
 
-        $profilename=Input::file('profile_img');
+        $newsex=Input::get('sex');
 
-        $destinationPath=base_path(). '/public/images/user_profile/';
+        $newcontact=Input::get('contact_num');
 
-        $profNameafter=$profilename->getClientOriginalName();
 
-        $profilename->move($destinationPath,$profNameafter);
+        if(empty(Input::file('profile_img')))
+        {
+
+        }
+        else
+        {
+            $profilename = Input::file('profile_img');
+
+            $destinationPath = base_path() . '/public/images/user_profile/';
+
+            $profNameafter = $profilename->getClientOriginalName();
+
+        }
+
+
 
         $userdetails->full_name=$newname;
         $userdetails->address=$newaddress;
         $userdetails->date_ob=$newdob;
         $userdetails->descriptions=$newaboutuser;
+        $userdetails->sex=$newsex;
+        $userdetails->contact_num=$newcontact;
 
         $userdetails->profile_image = Input::get('profile_img');
 
-        echo Input::get('profile_img');
-
        $userdetails->save();
 
-
+        return redirect::intended('/dashboard#accinfo');
 
     }
 

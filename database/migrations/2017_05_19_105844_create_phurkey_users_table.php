@@ -24,6 +24,7 @@ class CreatePhurkeyUsersTable extends Migration
             $table->string('sex')->nullable();
             $table->string('date_ob')->nullable();
             $table->string('address',100)->nullable();
+            $table->string('contact_num',100)->nullable();
             $table->text('profile_image')->nullable();
             $table->text('descriptions')->nullable();
             $table->string('conf_code',100)->unique();

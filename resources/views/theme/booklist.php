@@ -52,7 +52,7 @@ $booklists=book::paginate(15);
                                        data-position="bottom" data-delay="50" data-tooltip="Share this with friends"
                                     ><i class="material-icons">share</i></a>
                                 </div>
-                                <div class="card-content">
+                                <div class="card-content" style="text-transform: capitalize">
                                     <p>Publisher : <?=$booklist->publisher_name;?></p>
 
                                     <p>Condition : <?=$booklist->book_condition;?></p>

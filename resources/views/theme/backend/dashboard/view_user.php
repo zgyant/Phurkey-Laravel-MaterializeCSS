@@ -1,4 +1,5 @@
-    <h2>&nbsp;&nbsp; User Details</h2>
+
+<h2>&nbsp;&nbsp; User Details</h2>
 <hr>
     <?php
 $userdetails=\App\phurkey_users::where('id',$id)->get();
@@ -33,6 +34,7 @@ $userdetails=\App\phurkey_users::where('id',$id)->get();
            <p><b>Date of Birth: </b><?=$userdetail->date_ob;?></p>
            <p><b>Sex: </b><?=$userdetail->sex;?></p>
            <p><b>Address: </b><?=$userdetail->address;?></p>
+           <p><b>Contact Number: </b><?=$userdetail->contact_num;?></p>
            <p><b>Confirmation Code: </b><?=$userdetail->conf_code;?></p>
            <p><b>Description: </b><?=$userdetail->descriptions;?></p>
            <p><b>Activation Status: </b><?=$activated;?></p>
