@@ -17,15 +17,16 @@ class CategoryController extends Controller
 
     	$category = new phurkey_category;
 
-    	$category->category_name = Input::get('category');
+        $category->cat_image=Input::get('icon');
 
-    	$category->category_title = Input::get('title');
+    	$category->category_name = Input::get('title');
 
     	$destinationPath = base_path(). '/public/images/category_image';
 
     	$cat=Input::file('icon');
 
         $catNameafter=$cat->getClientOriginalName();
+
 
         $cat->move($destinationPath,$catNameafter);
 
@@ -35,12 +36,11 @@ class CategoryController extends Controller
         try{
         	$category->save();
         	Session::flash('flash_message', 'Category detail added successfully');
-        	return redirect('yakana/spinal/admin');
+        	return redirect('yakana/spinal/admin?action=categories');
         }catch(Exception $exe)
         {
 
-        	Session::flash('message','Oops something went wrong :(');
-        	return redirect('yakana/spinal/admin');
+        	echo $exe;
         }
 
 

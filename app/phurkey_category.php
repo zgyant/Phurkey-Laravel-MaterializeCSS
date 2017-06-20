@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class phurkey_category extends Model
 {
-	protected $table = 'catagories';
+	protected $table = 'categories';
 
     public $timestamps=false;
 
-    protected $fillable=['category_name', 'category_title', 'cat_image'];
+    protected $fillable=['category_title', 'cat_image'];
 }

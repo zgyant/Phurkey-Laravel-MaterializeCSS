@@ -146,6 +146,8 @@ class AccountController extends Controller
 
             $profNameafter = $profilename->getClientOriginalName();
 
+            $profilename->move($destinationPath,$profNameafter);
+
         }
 
 
