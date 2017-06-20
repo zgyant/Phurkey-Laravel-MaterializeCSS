@@ -118,3 +118,7 @@ Route::post('add_book', 'BookController@store');
 //Route::patch('update_profile/{id}', 'AccountController@update');
 
 Route::post('update_profile/{id}', 'AccountController@update');
+
+
+//add new category
+Route::post('add_category', 'CategoryController@store');

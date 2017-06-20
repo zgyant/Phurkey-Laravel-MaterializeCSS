@@ -10,6 +10,7 @@ class phurkey_admins extends Model
 {
     /*protected $table = 'books';
 */
+    public $timestamps=false;
 
     protected $fillable=[
         'admin_name',

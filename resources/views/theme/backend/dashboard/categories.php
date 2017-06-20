@@ -36,7 +36,44 @@ $categorydetails=\App\phurkey_admins::get();
                 <h4 class="modal-title">Add New Category</h4>
             </div>
             <div class="modal-body">
-                <p>Form banaune yeta.</p>
+            <div class="row">
+                <form class="form-horizontal" method="post" action="add_category">
+                    <input type="hidden" name="_token" value="<?= csrf_token();?>">
+                    
+                        
+                        <div class="form-group">
+                            <label for="Category" class="control-label col-sm-2">Category:</label>
+                            <div class="col-sm-7">
+                                <input id="category" type="text" class="form-control" name ="category" required>
+                            </div>
+                        </div>
+   
+
+                        <div class="form-group">
+                            <label for="Title" class="control-label col-sm-2">Category Title:</label>
+                            <div class="col-sm-7">
+                            <input id="title" type="text" class="form-control" name ="title" class="form-control" required>
+                            </div>
+                        </div>
+
+                       <div class="btn">
+                            <label for="image" class="control-label col-sm-4">Category Icon:</label>
+                            <div class="col-sm-8">
+                            <input type="file" multiple accept="image/*" name="icon" class="btn btn-default" required>
+                            </div>
+                        </div>
+                        <br><br>
+
+                        <div align="center">
+                        <button class="btn waves-effect btn-success" type="submit" name=" action" style="align: right;">
+                                 Submit
+                        <i class="material-icons right"></i>
+                        </button>
+                        </div>
+                         
+                
+                </form>
+            </div>
             </div>
         </div>
     </div>
