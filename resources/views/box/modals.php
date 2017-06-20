@@ -16,7 +16,7 @@ else {
                 <li class="tab col s3"><a href="#register">Register</a></li>
             </ul>
             <div id="login" class="col s12">
-                <form class="col s12" action="login_user" method="post">
+                <form class="col s12" action="/login_user" method="post">
                     <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
 
                     <div class="row">
@@ -41,7 +41,7 @@ else {
                 </form>
             </div>
             <div id="register" class="col s12">
-                <form class="col s12" action="create_user" method="post">
+                <form class="col s12" action="/create_user" method="post">
                     <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
 
                     <div class="row">

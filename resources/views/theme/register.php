@@ -1,3 +1,10 @@
+<?php
+if(Session::has('user_email'))
+{
+    echo "<script>window.location.replace('/dashboard');
+</script>";
+}
+?>
     <div id="loginandreg">
        <?php if(session()->has('flash_message')){
            echo '<div class="flash-box"> ';
