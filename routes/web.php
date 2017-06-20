@@ -53,6 +53,9 @@ Route::get('dashboard', function () {
 Route::get('book/{id}', function ($id) {
     return view('book',['id'=>$id]);
 });
+Route::get('booklist/book/{id}', function ($id) {
+    return view('book',['id'=>$id]);
+});
 
 Route::get('account', function () {
     return view('account');
