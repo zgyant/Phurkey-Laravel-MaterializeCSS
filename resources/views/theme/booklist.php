@@ -49,7 +49,7 @@ else
 
                     ?>
                     <div class="col s12 m4">
-                        <a href="#">
+                        <a href="book/<?=$booklist->id;?>">
                             <div class="card">
                                 <div class="card-image">
                                     <img style="width: 100%;height: 250px;" src="<?= asset('images/book_uploads/').'/'.$booklist->image; ?>">
@@ -72,6 +72,7 @@ else
                 }
                 ?>
             </div>
+
             <style>
                 .pagination li
                 {

@@ -50,8 +50,8 @@ Route::get('dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('book', function () {
-    return view('book');
+Route::get('book/{id}', function ($id) {
+    return view('book',['id'=>$id]);
 });
 
 Route::get('account', function () {
