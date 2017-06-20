@@ -55,7 +55,7 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
                 <span class="white-text" style="font-size: 40px"><p>Orders</p></span>
                 </div>
                 <div class="vitra-details-dash" style="background:#1c4b6d">
-                    <span class="white-text" style="font-size: 65px">0</span><br/>
+                    <span class="white-text" style="font-size: 65px"><?=\App\book::where('uploader_email',Session::get('user_email'))->count();?></span><br/>
                     <span class="white-text" style="font-size: 40px"><p>Uploads</p></span>
                 </div>
                 <div class="vitra-details-dash" style="background: #602330">
@@ -122,10 +122,80 @@ $userdetails=\App\phurkey_users::where('email',$useremail)->get();
         <div id="myorders" class="col s12 left-align">
             <h5>My Orders</h5>
             <hr/>
+
+
+
         </div>
         <div id="myuploads" class="col s12 left-align">
             <h5>My Uploads</h5>
             <hr/>
+            <?php
+            $bookdetails=\App\book::where('uploader_email',Session::get('user_email'))->where('activated','1')->get();
+            ?>
+            <table id="table_id" class="display">
+                <thead>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Author Name</th>
+                    <th>Publisher Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Condition</th>
+                    <th>Exchange/Sell</th>
+                    <th>Uploaded Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                foreach($bookdetails as $bookdetail)
+                {
+                    if($bookdetail->exse=='0')
+                    {
+                        $exse='<span style="color:red">Exchange</span>';
+                    }else{
+                        $exse='<span style="color:Blue">Sell</span>';
+                    }
+                    ?>
+                    <tr style="text-transform: capitalize">
+                        <td><?=$bookdetail->book_name;?></td>
+                        <td><a href="https://en.wikipedia.org/wiki/Special:Search?search=<?=$bookdetail->authur_name;?>" target="_blank"><?=$bookdetail->authur_name;?></a></td>
+                        <td><a href="https://www.google.com.np/search?q=<?=$bookdetail->publisher_name;?>" target="_blank"><?=$bookdetail->publisher_name;?></a></td>
+                        <td><a target="_blank" href="<?=asset('images/book_uploads').'/'.$bookdetail->image;?>""><img src="<?=asset('images/book_uploads').'/'.$bookdetail->image;?>" height="40" width="40"/></a></td>
+                        <td><?=$bookdetail->price;?> NRs</td>
+                        <td><?=$bookdetail->book_condition;?></td>
+                        <td><?=$exse;?></td>
+                        <td><?=$bookdetail->created_at;?></td>
+                        <td><a href="book_delete/<?=$bookdetail->id;?>" class="btn  red accent-4" role="button"><i class="material-icons">delete_forever</i></a>
+                        </td>
+                    </tr>
+                <?php }?>
+                </tbody>
+            </table>
+            <div class="modal fade" id="addAdminModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add New Book</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Form banaune yeta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready( function () {
+                    $('#table_id').DataTable(
+                        {//"scrollX": true
+                        }
+                    );
+
+                } );
+
+            </script>
+
         </div>
         </div>
 

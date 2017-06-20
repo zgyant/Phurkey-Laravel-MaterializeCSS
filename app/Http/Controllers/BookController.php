@@ -114,5 +114,14 @@ class BookController extends Controller
 
         return redirect('/yakana/spinal/admin?action=books');
     }
-    
+
+    public function book_delete_user(Request $request,$id)
+    {
+        $books=book::find($id);
+
+        $books->activated='0';
+        $books->save();
+
+        return redirect('/dashboard#myuploads');
+    }
 }

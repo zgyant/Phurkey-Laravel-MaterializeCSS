@@ -111,6 +111,9 @@ Route::get('/yakana/spinal/admin/getUsersDetails','AccountController@getUsersDet
 Route::get('/yakana/spinal/book_enable/{id}','BookController@enable_book');
 Route::get('/yakana/spinal/book_delete/{id}','BookController@book_delete');
 
+Route::get('/book_enable/{id}','BookController@enable_book_user');
+Route::get('/book_delete/{id}','BookController@book_delete_user');
+
 
 //add book
 Route::post('add_book', 'BookController@store');
@@ -128,3 +131,5 @@ Route::post('update_profile/{id}', 'AccountController@update');
 //add new category
 Route::post('yakana/spinal/add_category', 'CategoryController@store');
 Route::post('yakana/spinal/add_category', 'CategoryController@store');
+
+Route::post('yakana/spinal/website_setting', 'WebsiteController@update');

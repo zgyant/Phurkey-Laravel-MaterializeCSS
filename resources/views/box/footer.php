@@ -1,17 +1,17 @@
+
 <div id="niloline" style="background: #561a31;width:100%;height: 2px"></div>
 <footer class="page-footer" style="background: white;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
                 <h5>About</h5>
-                <p class="black-text text-lighten-4">Lorem ipsum dolor sit amet, vel natum iriure iudicabit ut, usu
-                    accusamus adolescens at, per cu etiam labitur
-                    iudicabit. Quodsi albucius consequuntur et eum,
-                    vim no dicant perfecto reformidans. Qui rebum suscipit nominati cu.
-                    Vitae noluisse appellantur eos ei, tale denique complectitur eam ut, suavitate maluisset nam ad.</p>
+                <p class="black-text text-lighten-4"><?=$websettings->about;?></p>
 <!--                <h5 class="black-text">Socialize with us</h5>-->
                 <ul>
-                    <img src="<?= asset('images/social.png')?>" width="120"/>
+                    <a href="https://facebook.com/<?=$websettings->facebook;?>" target="_blank"><img src="<?= asset('images/facebook.png')?>" width="40"/></a>
+                    <a href="https://twitter.com/<?=$websettings->twitter;?>" target="_blank"><img src="<?= asset('images/twitter.png')?>" width="40"/>
+                    </a>
+
                     <!--<li><a class="black-text text-lighten-3" href="#!">Contact us</a></li>-->
                     <!--<li><a class="black-text text-lighten-3" href="#!">Our Team</a></li>-->
                     <!--<li><a class="black-text text-lighten-3" href="#!">Ads info</a></li>-->
@@ -25,13 +25,13 @@
                     <div class="input-field col s12">
                         <form method="post" action="#">
                             <input id="icon_prefix" type="text" class="validate">
-                            <label for="icon_prefix" style="font-size: 90%;">Email Address</label>
+                            <label for="icon_prefix" style="font-size: 90%;"><?=$websettings->email;?></label>
                             <input type="submit" hidden/>
                         </form>
                     </div>
-                    <p><i class="material-icons left">location_on</i>Kathmandu, Nepal</p>
-                    <p><i class="material-icons left">ring_volume</i>00977-01-0000000</p>
-                    <p><i class="material-icons left">email</i>info@phurkey.com</p>
+                    <p><i class="material-icons left">location_on</i><?=$websettings->location;?></p>
+                    <p><i class="material-icons left">ring_volume</i><?=$websettings->contact;?></p>
+                    <p><i class="material-icons left">email</i><?=$websettings->email;?></p>
                 </ul>
             </div>
         </div>
