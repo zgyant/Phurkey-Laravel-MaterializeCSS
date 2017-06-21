@@ -40,6 +40,9 @@ if(isset($_GET['action']))
     if($_GET['action']=='settings')
     {
         include resource_path('views/theme/backend/dashboard/settings.php');
+    } if($_GET['action']=='websitedetails')
+    {
+        include resource_path('views/theme/backend/dashboard/websitedetails.php');
     }
 }
 else
