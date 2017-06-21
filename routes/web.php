@@ -115,6 +115,9 @@ Route::get('/book_enable/{id}','BookController@enable_book_user');
 Route::get('/book_delete/{id}','BookController@book_delete_user');
 
 
+Route::post('/booklist/book/message/{username}','MessageController@sendMsg');
+
+
 //add book
 Route::post('add_book', 'BookController@store');
 

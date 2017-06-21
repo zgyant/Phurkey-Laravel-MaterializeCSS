@@ -18,7 +18,8 @@ class CreateMessageTable extends Migration
             $table->string('sender',50);
             $table->string('receiver',50);
             $table->text('message');
-            $table->boolean('seen');
+            $table->boolean('seen')->default(0);
+            $table->string('book_id');
             $table->timestamps();
         });
     }

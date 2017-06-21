@@ -2,6 +2,11 @@
 use App\book;
 
 $booklists=book::findOrFail($id);
+
+if(Session::has('status'))
+{
+    echo "<script>Materialize.toast('Message Sent !!', 4000)</script> ";
+}
 ?>
 
 <div id="left-bigyapan">
@@ -91,13 +96,20 @@ $booklists=book::findOrFail($id);
                             $username= $un->username;
                         }
                         echo" <h4>Message the Uploader</h4>
-                    <form method='post' action='message/$username'>
-                                   <input type=\"hidden\" name=\"_token\" value=\"<?= csrf_token();?>\">
+                    <form method='post' action='message/$username'>";
+                    ?>
+
+
+                     <input type='hidden' name='_token' value='<?=csrf_token();?>'>
+                     <input type='hidden' name='book_id' value='<?=$id;?>'>
+
+                     <?php
+                     echo"
                     <div class=\"input-field col s12\">
                         <textarea id=\"message_book\" class=\"materialize-textarea\" data-length=\"120\" name=\"message_book\" required></textarea>
                         <label for=\"message_book\">Write your query!</label>
                     </div>
-                        <input type='submit' value='Send Message' class=\"modal-action  waves-effect waves-light btn green right\" />
+                        <input type='submit' value='Send Message' class=\"modal-action  waves-effect waves-light btn green right send_message\" />
                     <br>
                     </form>
 
