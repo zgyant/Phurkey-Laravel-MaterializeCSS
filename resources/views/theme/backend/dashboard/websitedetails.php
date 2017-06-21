@@ -1,6 +1,6 @@
 <?php
 use App\phurkey_website;
-$web_sett=phurkey_website::find(1);
+$webdetails=\App\about_website::find(1);
 if(Session::has('status'))
 {
     echo "<div class=\"alert alert-success\">
@@ -11,7 +11,7 @@ if(Session::has('status'))
 <h3>Website Pages</h3>
 <hr>
 <div class="row">
-    <form  method="post" action="website_setting" enctype="multipart/form-data">
+    <form  method="post" action="website_details" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="<?= csrf_token();?>">
         <fieldset>
 
@@ -25,7 +25,7 @@ if(Session::has('status'))
             <div class="form-group">
                 <label class="control-label col-sm-2" for="user_pri">Privacy</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="user_pri" name="user_pri" rows="4"><?=$web_sett->meta_desc;?></textarea>
+                    <textarea class="form-control" id="user_pri" name="user_pri" rows="4" required><?=$webdetails->privacy;?></textarea>
                     <p class="help-block"></p>
                 </div>
             </div>
@@ -33,7 +33,7 @@ if(Session::has('status'))
             <div class="form-group">
                 <label class="control-label col-sm-2" for="terms_con">Terms & Conditions</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="terms_con" name="terms_con" rows="4"><?=$web_sett->meta_key;?></textarea>
+                    <textarea class="form-control" id="terms_con" name="terms_con" rows="4" required><?=$webdetails->terms_conditions;?></textarea>
                     <p class="help-block"></p>
                 </div>
             </div>
@@ -47,7 +47,7 @@ if(Session::has('status'))
             <div class="form-group">
                 <label class="control-label col-sm-2" for="adpolicy">Advertisement Policy</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="adpolicy" name="adpolicy" rows="4"><?=$web_sett->about;?></textarea>
+                    <textarea class="form-control" id="adpolicy" name="adpolicy" rows="4" required><?=$webdetails->ad_policy;?></textarea>
                     <p class="help-block"></p>
                 </div>
             </div>
@@ -55,7 +55,7 @@ if(Session::has('status'))
             <div class="form-group">
                 <label class="control-label col-sm-2" for="refund">Refund Policy</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="refund" name="refund" rows="4"><?=$web_sett->about;?></textarea>
+                    <textarea class="form-control" id="refund" name="refund" rows="4"required><?=$webdetails->refund_policy;?></textarea>
                     <p class="help-block"></p>
                 </div>
             </div>

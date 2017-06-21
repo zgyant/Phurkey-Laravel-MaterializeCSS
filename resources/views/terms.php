@@ -13,6 +13,7 @@ Developed by Yakana IT Solutions
 -->
 <?php
 $websettings=\App\phurkey_website::find(1);
+$webdetails=\App\about_website::find(1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,9 +67,7 @@ $websettings=\App\phurkey_website::find(1);
 
     <img src="<?=asset('images/yakanalogo.png')?>" width="150"/>
     <h4 style="">Terms & Conditions</h4>
-    <p>
-    </p>
-
+        <?=$webdetails->terms_conditions;?>
 </div>
 
 
