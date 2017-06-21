@@ -22,6 +22,11 @@
 </div>
 <!-- /.modal -->
 <script>
+    CKEDITOR.replace( 'meta_desc' );
+    CKEDITOR.replace('meta_key');
+    CKEDITOR.replace('about');
+</script>
+<script>
     CKEDITOR.replace( 'user_pri' );
     CKEDITOR.replace('terms_con');
     CKEDITOR.replace('adpolicy');

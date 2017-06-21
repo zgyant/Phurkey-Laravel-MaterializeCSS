@@ -38,23 +38,24 @@ $websettings=\App\phurkey_website::find(1);
 
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Coming Soon | Phurkey by Yakana IT Solutions" />
+    <meta property="og:title" content="Phurkey | Phurkey by Yakana IT Solutions" />
     <meta property="og:type" content="Phurkey Nepal's largest online book store where you can exchange, buy, sell used or unused books brought to you by Yakana IT Solutions. Nepal's first online second hand book portal" />
     <meta property="og:url" content="http://www.phurkey.com/" />
     <meta property="og:image" content="http://phurkey.com/images/cover.PNG" />
     <meta property="og:description" content="Phurkey Nepal's largest online book store where you can exchange, buy, sell used or unused books brought to you by Yakana IT Solutions. Nepal's first online second hand book portal" />
     <meta property="og:site_name" content="Phurkey | Phurkey.com" />
     <title><?=$websettings->web_title;?></title>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="<?= asset("js/materialize.min.js")?>"></script>
+    <!-- DataTables -->
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
 </head>
 <body>
-<!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="<?= asset("js/materialize.min.js")?>"></script>
-<!-- DataTables -->
 
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
-<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
 <header>
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">

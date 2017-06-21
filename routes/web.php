@@ -26,6 +26,23 @@ Route::get('newbook', function () {
     return view('newbook');
 });
 
+Route::get('privacy', function () {
+    return view('privacy');
+});
+
+Route::get('terms', function () {
+    return view('terms');
+});
+
+Route::get('sponsors', function () {
+    return view('sponsors');
+});
+
+
+Route::get('teams', function () {
+    return view('teams');
+});
+
 
 
 Route::get('forgot', function () {

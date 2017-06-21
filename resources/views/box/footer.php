@@ -40,10 +40,10 @@
         <div class="container">
             © 2017 <a href="#" target="_blank">Yakana IT Solutions</a>. All Rights Reserved.
             <a class="black-text text-lighten-4 right" href="#!" style="margin-left: 10px">Contact</a>
-            <a class="black-text text-lighten-4 right" href="#!" style="margin-left: 10px">Our Team</a>
-            <a class="black-text text-lighten-4 right" href="#!" style="margin-left: 10px">Ads info</a>
-            <a class="black-text text-lighten-4 right" href="#!" style="margin-left: 10px">Terms</a>
-            <a class="black-text text-lighten-4 right" href="#!" style="margin-left: 10px">Privacy</a>
+            <a class="black-text text-lighten-4 right" href="/teams" style="margin-left: 10px">Our Team</a>
+            <a class="black-text text-lighten-4 right" href="/sponsors" style="margin-left: 10px">Ads info</a>
+            <a class="black-text text-lighten-4 right" href="/terms" style="margin-left: 10px">Terms</a>
+            <a class="black-text text-lighten-4 right" href="/privacy" style="margin-left: 10px">Privacy</a>
 
         </div>
     </div>
