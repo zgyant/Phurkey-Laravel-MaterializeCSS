@@ -44,6 +44,10 @@ if(isset($_GET['action']))
     {
         include resource_path('views/theme/backend/dashboard/websitedetails.php');
     }
+    if($_GET['action']=='member')
+    {
+        include resource_path('views/theme/backend/dashboard/team_info.php');
+    }
 }
 else
 {

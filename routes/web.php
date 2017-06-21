@@ -160,3 +160,6 @@ Route::post('yakana/spinal/add_category', 'CategoryController@store');
 
 //user message route
 Route::post('message/{username}', 'MessageController@sendMsg');
+
+//team member route
+Route::post('yakana/spinal/add_member', 'TeamInfoController@store');
