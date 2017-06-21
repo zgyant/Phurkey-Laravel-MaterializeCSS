@@ -4,7 +4,9 @@
     <div class="row">
         <div class="col-sm-2">
             <!-- Left column -->
-            <a href="?action=settings"><strong><i class="glyphicon glyphicon-wrench"></i> Settings</strong></a>
+            <a href="?action=settings"><strong><i class="glyphicon glyphicon-wrench"></i> Settings</strong></a><hr>
+            <a href="?action=websitedetails"><strong><i class="glyphicon glyphicon-paperclip"></i> Website Pages</strong></a>
+
             <hr>
 
             <ul class="nav nav-stacked">
