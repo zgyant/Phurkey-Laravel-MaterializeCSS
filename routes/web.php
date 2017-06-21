@@ -141,4 +141,4 @@ Route::post('yakana/spinal/add_category', 'CategoryController@store');
 
 
 //user message route
-Route::post('message/{username}', 'MessageController@send');
+Route::post('message/{username}', 'MessageController@sendMsg');

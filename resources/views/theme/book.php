@@ -96,7 +96,7 @@ if(Session::has('status'))
                             $username= $un->username;
                         }
                         echo" <h4>Message the Uploader</h4>
-                    <form method='post' action='message/$username'>";
+                    <form method='post' action='/message/$username'>";
                     ?>
 
 
