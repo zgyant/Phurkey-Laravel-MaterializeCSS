@@ -13,7 +13,7 @@ $members = team_info::all();
 <html >
 <head>
     <meta charset="UTF-8">
-    <title>Meet Our Team | Phurkey & Yakana IT</title>
+    <title>We | Phurkey & Yakana IT</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
@@ -33,13 +33,12 @@ $members = team_info::all();
 
             <h3 class="text-uppercase">Our professionals </h3>
             <p class="p-top-30 half-txt">
-                Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.
-                Nam pulvinar vitae neque et porttitor. Praesent sed nisi eleifend.
+                "You don't climb mountains without a team, you don't climb mountains without being fit, you don't climb mountains without being prepared and you don't climb mountains without balancing the risks and rewards. And you never climb a mountain on accident - it has to be intentional." - <b>Mark Udall</b>
             </p>
         </div>
         <?php foreach($members as $member)
            { ?>
-            <div class="col-md-4 col-sm-4">
+            <div class="col-md-3 col-sm-3">
                 <div class="team-member">
                     <div class="team-img">
                     <img src="<?=asset('images/member_image/').'/'.$member->member_photo; ?>" alt="team member" class="img-responsive">
@@ -47,19 +46,33 @@ $members = team_info::all();
                 <div class="team-hover">
                     <div class="desk">
                         <h4>Hi There !</h4>
+<<<<<<< HEAD
                         <p><?=$member->About_Member;?></p>
+=======
+                        <p>Blah Blah Blah</p>
+>>>>>>> 21ab4897fac44626c14d3dc0b30940daeaf9cf61
                     </div>
                     <div class="s-link">
                         <a href="www.facebook.com/<?=$member->Facebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
                         <a href="<?=$member->Twitter;?>"><i class="fa fa-twitter"></i></a>
+<<<<<<< HEAD
                         <a href="<?=$member->LinkedIn?>"><i class="fa fa-linkedin"></i></a>
 
+=======
+                        <a href="<?=$member->LinkedIn;?>"><i class="fa fa-linkedin"></i></a>
+                        <a href="<?=$member->Website;?>"><i class="fa fa-globe"></i></a>
+                        <a href="mailto:<?=$member->Email;?>"><i class="fa fa-at"></i></a>
+>>>>>>> 21ab4897fac44626c14d3dc0b30940daeaf9cf61
                     </div>
                 </div>
             </div>
             <div class="team-title">
                 <h5><?=$member->Full_Name;?></h5>
+<<<<<<< HEAD
                 <span><?=$member->Position?></span>
+=======
+                <span><?=$member->Position;?></span>
+>>>>>>> 21ab4897fac44626c14d3dc0b30940daeaf9cf61
             </div>
         </div>
         <?php
