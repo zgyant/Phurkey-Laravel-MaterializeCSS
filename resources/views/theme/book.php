@@ -46,7 +46,7 @@ $booklists=book::findOrFail($id);
          <p><b>Author: </b><?=$booklists->authur_name;?></p>
          <p><b>Publisher: </b><?=$booklists->publisher_name;?></p>
             </div><hr>
-            <p><b>Uploader By: </b><?php
+            <p><b>Uploaded By: </b><?php
                     $email= $booklists->uploader_email;
                     $uploadername=\App\phurkey_users::where('email',$email)->get();
 
@@ -85,15 +85,21 @@ $booklists=book::findOrFail($id);
                 <div class="modal-content" style="min-height: 50px;">  <?php
                     if(Session::has('user_email'))
                     {
-                        $email=Session::get('useremail');
-
+                        $email=Session::get('user_email');
+                        foreach($uploadername as $un)
+                        {
+                            $username= $un->username;
+                        }
                         echo" <h4>Message the Uploader</h4>
+                    <form method='post' action='message/$username'>
+                                   <input type=\"hidden\" name=\"_token\" value=\"<?= csrf_token();?>\">
                     <div class=\"input-field col s12\">
                         <textarea id=\"message_book\" class=\"materialize-textarea\" data-length=\"120\" name=\"message_book\" required></textarea>
                         <label for=\"message_book\">Write your query!</label>
                     </div>
-                        <a href=\"#!\" class=\"modal-action modal-close waves-effect waves-light btn green right\">Send</a>
+                        <input type='submit' value='Send Message' class=\"modal-action  waves-effect waves-light btn green right\" />
                     <br>
+                    </form>
 
 ";
                         echo '<h5>or</h5><p>Contact him directly: <b>';
