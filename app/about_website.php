@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class website_detail extends Model
+class about_website extends Model
 {
     //
 }

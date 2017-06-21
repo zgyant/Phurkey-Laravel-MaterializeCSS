@@ -16,12 +16,13 @@ class CreateTeamInfosTable extends Migration
         Schema::create('team_infos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Full_Name');
-            $table->varchar('Email',50)->unique();
-            $table->varchar('Website');
-            $table->integer('Contact No.');
-            $table->varchar('LinkedIn');
-            $table->varchar('Twitter');
-            $table->varchar('Facebook');
+            $table->string('Email',50)->unique();
+            $table->string('Position');
+            $table->string('Website');
+            $table->integer('Contact_Number');
+            $table->string('LinkedIn');
+            $table->string('Twitter');
+            $table->string('Facebook');
             $table->text('member_photo');
             $table->boolean('active');
             $table->timestamps();

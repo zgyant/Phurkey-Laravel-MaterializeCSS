@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWebsiteDetailsTable extends Migration
+class CreateAboutWebsitesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateWebsiteDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('website_details', function (Blueprint $table) {
+        Schema::create('about_websites', function (Blueprint $table) {
             $table->increments('id');
             $table->text('privacy');
             $table->text('terms_conditions');
@@ -30,6 +30,6 @@ class CreateWebsiteDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('website_details');
+        Schema::dropIfExists('about_websites');
     }
 }
