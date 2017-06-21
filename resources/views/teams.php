@@ -46,33 +46,26 @@ $members = team_info::all();
                 <div class="team-hover">
                     <div class="desk">
                         <h4>Hi There !</h4>
-<<<<<<< HEAD
+
                         <p><?=$member->About_Member;?></p>
-=======
-                        <p>Blah Blah Blah</p>
->>>>>>> 21ab4897fac44626c14d3dc0b30940daeaf9cf61
+
                     </div>
                     <div class="s-link">
                         <a href="www.facebook.com/<?=$member->Facebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="<?=$member->Twitter;?>"><i class="fa fa-twitter"></i></a>
-<<<<<<< HEAD
-                        <a href="<?=$member->LinkedIn?>"><i class="fa fa-linkedin"></i></a>
+                        <a href="<?=$member->Twitter;?>" target="_blank"><i class="fa fa-twitter"></i></a>
 
-=======
-                        <a href="<?=$member->LinkedIn;?>"><i class="fa fa-linkedin"></i></a>
-                        <a href="<?=$member->Website;?>"><i class="fa fa-globe"></i></a>
-                        <a href="mailto:<?=$member->Email;?>"><i class="fa fa-at"></i></a>
->>>>>>> 21ab4897fac44626c14d3dc0b30940daeaf9cf61
+                        <a href="<?=$member->LinkedIn;?>" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a href="<?=$member->Website;?>" target="_blank"><i class="fa fa-globe"></i></a>
+                        <a href="mailto:<?=$member->Email;?>" target="_blank"><i class="fa fa-at"></i></a>
+
                     </div>
                 </div>
             </div>
             <div class="team-title">
                 <h5><?=$member->Full_Name;?></h5>
-<<<<<<< HEAD
-                <span><?=$member->Position?></span>
-=======
+
                 <span><?=$member->Position;?></span>
->>>>>>> 21ab4897fac44626c14d3dc0b30940daeaf9cf61
+
             </div>
         </div>
         <?php
