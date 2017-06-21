@@ -47,17 +47,19 @@ $members = team_info::all();
                 <div class="team-hover">
                     <div class="desk">
                         <h4>Hi There !</h4>
-                        <p>I love to introduce myself as a hardcore Web Designer.</p>
+                        <p><?=$member->About_Member;?></p>
                     </div>
                     <div class="s-link">
-                        <a href="<?=$member->Facebook;?>"><i class="fa fa-facebook"></i></a>
+                        <a href="www.facebook.com/<?=$member->Facebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
                         <a href="<?=$member->Twitter;?>"><i class="fa fa-twitter"></i></a>
+                        <a href="<?=$member->LinkedIn?>"><i class="fa fa-linkedin"></i></a>
+
                     </div>
                 </div>
             </div>
             <div class="team-title">
                 <h5><?=$member->Full_Name;?></h5>
-                <span>founder &amp; ceo</span>
+                <span><?=$member->Position?></span>
             </div>
         </div>
         <?php

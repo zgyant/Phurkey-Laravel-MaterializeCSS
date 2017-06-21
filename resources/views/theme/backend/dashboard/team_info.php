@@ -19,6 +19,7 @@ $Memberdetails=\App\team_info::get();
         <th>Facebook</th>
         <th>Member Photo</th>
         <th>Active</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -29,16 +30,16 @@ $Memberdetails=\App\team_info::get();
         <tr>
             <td><?=$Memberdetail->id;?></td>
             <td><?=$Memberdetail->Full_Name;?></td>
-            <td><?=$Memberdetail->Email;?></td>
+            <td><?=$Memberdetail->Eail;?></td>
             <td><?=$Memberdetail->Position;?></td>
             <td><?=$Memberdetail->Website;?></td>
             <td><?=$Memberdetail->Contact_Number;?></td>
             <td><?=$Memberdetail->LinkedIn;?></td>
             <td><?=$Memberdetail->Twitter;?></td>
             <td><?=$Memberdetail->Facebook;?></td>
-            <td><a target="_blank" href="<?=asset('images/member_image').'/'.$memberdetail->member_photo;?>""><img src="<?=asset('images/category_image').'/'.$categorydetail->cat_image;?>" height="40" width="40"/></a></td>
+            <td><a target="_blank" href="<?=asset('images/member_image').'/'.$Memberdetail->member_photo;?>""><img src="<?=asset('images/category_image').'/'.$Memberdetail->member_photo;?>" height="40" width="40"/></a></td>
             <td><?=$Memberdetail->active;?></td>
-            <td><a href="cat_del/<?=$Memberdetail->id;?>" class="btn btn-danger" role="button">Remove</a></td>
+            <td><a href="member_delete/<?=$Memberdetail->id;?>" class="btn btn-danger" role="button">Remove</a></td>
         </tr>
     <?php }?>
     </tbody>
@@ -121,6 +122,13 @@ $Memberdetails=\App\team_info::get();
                             <input type="file"  multiple accept="image/*" name="pic" class="btn btn-default" required>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="about" class="control-label col-sm-2">About You:</label>
+                            <div class="col-sm-7">
+                            <textarea id="about" type="text" class="form-control" name ="about" class="form-control" required></textarea> 
+                            </div>
+                        </div
                         <br><br>
 
                         <div align="center">
@@ -139,7 +147,9 @@ $Memberdetails=\App\team_info::get();
 </div>
 <script>
     $(document).ready( function () {
-        $('#table_id').DataTable();
+        $('#table_id').DataTable(
+            {"scrollX":true}
+        );
     } );
 
 </script>

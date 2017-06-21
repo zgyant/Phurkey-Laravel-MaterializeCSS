@@ -45,10 +45,29 @@ class TeamInfoController extends Controller
 
         $user->member_photo=$profileNameafter;
 
+        $user->About_Member=Input::get('about');
+
     	$user->active = '1';
 
+        try{
+    	   
+           $user->save();
+    	   return Redirect('yakana/spinal/admin');
 
-    	$user->save();
-    	
+        }catch(Exception $ex)
+        {
+            Session::flash('message','Member not added');
+            return Redirect('yakana/spinal/admin?action=member');
+        }
+    }
+
+    public function member_delete(Request $request,$id)
+    {
+        $user=team_info::find($id);
+
+        $user->activated='0';
+        $user->save();
+
+        return redirect('/yakana/spinal/admin?action=member');
     }
 }

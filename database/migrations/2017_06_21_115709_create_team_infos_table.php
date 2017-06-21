@@ -24,6 +24,7 @@ class CreateTeamInfosTable extends Migration
             $table->string('Twitter');
             $table->string('Facebook');
             $table->text('member_photo');
+            $table->text('About_Member');
             $table->boolean('active');
             $table->timestamps();
         });
